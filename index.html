@@ -20,6 +20,7 @@ docHead.appendChild(newLink);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
 :root {
+  --transparent:rgba(0,0,0,0);
   --background-dark:#000000;
   --shadow-dark:#717171;
   --bevel-light:#D2D2D2;
@@ -229,10 +230,13 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
   width:100% !important;
   margin:0px !important; padding-top:0px !important;
 }
+#signup .helper_text {
+  background-color:var(--transparent) !important;
+}
 #signup .mce_inline_error {
   margin:0px !important;
   padding-top:-10px !important;
-  background-color:var(--background-dark) !important;
+  background-color:var(--transparent) !important;
   color:var(--text-on-dark) !important;
   font-size:24px !important;
 }
@@ -257,6 +261,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
   border-radius:0px !important;
   background-color:var(--background-dark);
   color:var(--text-on-dark) !important;
+  font-size:24px !important;
 }
 #signup #mce-EMAIL:focus {
   outline:none !important;
@@ -286,13 +291,41 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
   border:1px solid var(--surface-light) !important;
 }
 @media all and (max-width:1200px) {
-  #signup #mce-EMAIL { width:calc(100% - 176px); }
+  #signup #mce-EMAIL {
+    width:calc(100% - 176px);
+    padding-left:4px !important;
+  }
 }
 @media all and (max-width:991px) {
-  #signup #mce-EMAIL { width:calc(100% - 194px); }
+  #signup #mce-EMAIL {
+    width:calc(100% - 194px);
+    padding-left:6px !important;
+  }
 }
 @media all and (max-width:767px) {
-  #signup #mce-EMAIL { width:calc(100% - 190px); }
+  #signup #mce-EMAIL {
+    width:calc(100% - 190px);
+    padding-left:8px !important;
+  }
+}
+@media all and (max-width:503px) {
+  #signup #mce-EMAIL {
+    width:100%;
+    margin-bottom:82px !important;
+    font-size:20px !important;
+  }
+  #signup #mce-responses {
+    margin-top:74px !important;
+  }
+  #signup #mc-embedded-subscribe {
+    position:relative;
+    top:-86px;
+    width:100% !important;
+    margin-right:52px;
+  }
+  .optionalParent {
+    padding-right:4%;
+  }
 }
                     </style>
                     <form action="https://choosek.us21.list-manage.com/subscribe/post?u=6857be21cdbcb21e1805fcacd&amp;id=fbb288fc4f&amp;f_id=002befe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
