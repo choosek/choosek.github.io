@@ -16,7 +16,7 @@ newLink.href = 'data:image/png;base64,'+favIcon;
 docHead.appendChild(newLink);
     </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@200..900&display=auto">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
 :root {
@@ -30,6 +30,7 @@ docHead.appendChild(newLink);
   --text-on-light:#323232;
   --text-on-dark:#FFFFFF;
   --link-on-light:#000000;
+  --link-on-light-hover:#404040;
 }
 html { height:100%; }
 body {
@@ -46,8 +47,8 @@ body {
   text-align:center;
 }
 .splash img { height:270px; margin-top:64px; margin-bottom:96px; }
-a { text-decoration:none; }
-a:hover { color:var(--link-on-light-dark); text-decoration:none; }
+a { text-decoration:underline; font-weight:bold; color:var(--link-on-light); }
+a:hover { text-decoration:underline; font-weight:bold; color:var(--link-on-light-hover); }
 .noselect {
   -webkit-touch-callout:none; /* iOS Safari */
     -webkit-user-select:none; /* Safari */
@@ -112,7 +113,8 @@ footer .footer-window {
   background-color:var(--surface-light);
 }
 footer .container { padding-left:20px; padding-right:20px; }
-footer a { color:var(--text-on-light); font-weight:bold; }
+footer a { color:var(--link-on-light); }
+footer a:hover { color:var(--link-on-light-hover); }
 footer .card { margin-bottom:0px !important; }
 footer .card-body-items { padding:22px 20px 6px 20px; background-color:var(--surface-light); }
 footer .card-body-items-left { float:left; }
@@ -182,24 +184,36 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
           <div class="card-deck xl-2">
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Generate fully accurate <b>trade cost analysis</b> reports without decrypting customer data.
+                Protect transaction data and prevent front-running by maintaining and operating <a href="https://choosek.com/tinybook">encrypted order books</a>. 
               </div>
             </div>
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Maintain and operate <b>encrypted order books</b> to ensure that front-running is impossible.
+                Encrypt users' contributions in decentralized auctions and <a href="https://choosek.com/tinybook">decision-making workflows</a>.
               </div>
             </div>
           </div>
           <div class="card-deck xl-2">
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Compare encrypted customer data across financial institutions in <b>know your customer (KYC)</b> workflows.
+                Generate fully accurate <b>transaction cost analysis (TCA)</b> reports without decrypting customer data
               </div>
             </div>
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
+                Compare encrypted customer data across financial institutions in <b>know your customer (KYC)</b> workflows.
+              </div>
+            </div>
+          </div>
+          <div class="card-deck xl-2">
+            <div class="card xl-4 card-shadow">
+              <div class="card-body card-window">
                 Address challenges associated with <b>maximal extractable value (MEV)</b> by working with encrypted transactions.
+              </div>
+            </div>
+            <div class="card xl-4 card-shadow">
+              <div class="card-body card-window">
+                Introduce <b>encrypted high-value data</b> into business workflows, expanding collaboration opportunities.
               </div>
             </div>
           </div>
@@ -369,6 +383,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
                 </div>
                 <div class="card-body-items-right">
                   <span class="icon"><a href="mailto:contact@choosek.com"><i class="far fa-envelope"></i></a></span>
+                  <span class="icon"><a href="https://twitter.com/choosekcorp"><i class="fab fa-x-twitter"></i></a></span>
                   <span class="icon"><a href="https://linkedin.com/company/choosek"><i class="fab fa-linkedin"></i></a></span>
                   <span class="icon-last"><a href="https://github.com/choosek"><i class="fab fa-github"></i></a></span>
                 </div>
