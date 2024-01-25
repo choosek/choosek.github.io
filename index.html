@@ -46,10 +46,18 @@ body {
   font-family:"Saira",Verdana,sans-serif; font-size:24px; font-weight:500;
   line-height:32px;
 }
+.background-pixels-container {
+  position:fixed;
+  width:100%; height:100%;
+  background-color:var(--background-dark);
+  z-index:0;
+}
+#background-pixels { height:100%; width:100%; }
 .splash {
   width:100%;
   margin:0px; padding:30px 10px 30px 30px;
   text-align:center;
+  z-index:999;
 }
 .splash img { height:270px; margin-top:64px; margin-bottom:96px; }
 a { text-decoration:underline; font-weight:bold; color:var(--link-on-light); }
@@ -88,13 +96,14 @@ a:hover { text-decoration:underline; font-weight:bold; color:var(--link-on-light
   left:0; top:0;
   padding-top:0px; padding-bottom:0px;
   border-right:0px solid var(--background-dark);
-  background-color:var(--background-dark);
+  background-color:var(--transparent);
   color:var(--surface-light);
 }
 .main { padding-bottom:60px; font-size:30px; font-weight:500; line-height:38px; }
 .main .card-body { background-color:var(--surface-light); }
 .secondary { padding-top:10px; padding-bottom:20px; font-weight:500; line-height:38px; }
-.secondary .card-body { background-color:var(--background-dark); }
+.secondary .card { background-color:var(--transparent); }
+.secondary .card-body { background-color:var(--transparent); }
 .card-shadow {
   padding:0px !important;
   border-radius:0px !important;
@@ -110,6 +119,7 @@ footer {
   width:calc(100% - 45px);
   margin:auto auto 0 auto; margin-left:30px; padding:0px;
   background-color:var(--shadow-dark);
+  z-index:999;
 }
 footer .footer-window {
   position:relative; top:-15px; left:-15px;
@@ -173,6 +183,9 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
     </style>
   </head>
   <body>
+    <div class="background-pixels-container">
+      <canvas id="background-pixels"></canvas>
+    </div>
     <div class="splash noselect">
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAEOCAYAAAC0KMNOAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpVIqDhYUEczQOtlFRRylikWwUNoKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdXFSdJES/5cUWsR4cNyPd/ced+8AoVllqtkzB6iaZaQTcTGXXxUDrwhiCAKiGJOYqSczi1l4jq97+Ph6F+NZ3uf+HP1KwWSATySeY7phEW8Qz2xaOud94jArSwrxOfGEQRckfuS67PIb55LDAs8MG9n0PHGYWCx1sdzFrGyoxNPEEUXVKF/Iuaxw3uKsVuusfU/+wlBBW8lwneYoElhCEimIkFFHBVVYiNGqkWIiTftxD/+I40+RSyZXBYwcC6hBheT4wf/gd7dmcWrSTQrFgd4X2/6IAoFdoNWw7e9j226dAP5n4Err+GtNYPaT9EZHixwBA9vAxXVHk/eAyx1g+EmXDMmR/DSFYhF4P6NvygODt0Bwze2tvY/TByBLXS3fAAeHwHiJstc93t3X3du/Z9r9/QC8rHLEluMd/wAAAAlwSFlzAAALEwAACxMBAJqcGAAAA89JREFUeNrt3M0J2zAYgOG4zgRZI6CdPILA12wg0AieShvknA2Ee+ixLZQvUMXx89yFf+K8yAd/02WQ3vseXdtaCx83pTRdwPM8zA+PCyA6gOgAiA4gOgCiA4gOIDoAogOIDoDoAKIDIDqA6AAncj3bBeecwyMIaq3GYuB5ttMBvF4BiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiA/DPpt57+NP41lr4wNu2Dblg4yn4NO+MpyilXEb8f1NK4f+RnQ7g9QoQHQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAd4EwOOdrCeAr45Yj/XzsdwOsVIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAIgOIDqA6ACIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAKLjFgCiA4gOgOgAogMgOoDoAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAH+zqFvwfvfc9ura1Fj5uSmlyvdjpAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAogMgOsAYRlt8uZxzeMRErXVyvdjpAKIDIDqA6ACIDiA6gOgAiA4gOgCiA4gOIDoAogOIDkCc0RYHcL/fw2tLKeG1y7KEx0Ss6+qHw04HEB1AdABEBxAdANEBRAdAdADRAUQHQHQA0QEQHUB0gNMz2oKPU2ud3AU7HQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAdQHQARAf4BkZbHEBrLbx227Yh51xKCa9dlmWPrk0pGYthpwMgOoDoAKIDIDqA6ACIDiA6gOi4BYDoAKIDIDqA6ACIDvAxjLbgr2qt4TERpZR9xDnnnPcR14udDiA6AKIDiA4gOgCiA4gOgOgAogOIDoDoAKIDIDqA6AD8yXWe5/Dn/O+MEXg8HuGTXpYlfNyU0pDxBaPu8yhnu97ee/icW2vh467rOuR63xkDYqcDeL0CRAdAdADRARAdQHQA0QEQHUB0AEQHEB0A0QFEBziTadSBX69XeBTA8/kMH3fbtvDadz7n57uNGm1xxOfZTgcQHUB0AEQHEB0A0QFEBxAdANEBRAdAdADRARAdQHSAM7mOOvDtdgt/Vp9z3v10fJJ5nj3PdjqA6ACi4xYAogOIDoDoAKIDIDqA6ACiAyA6gOgAiA4gOgC/+QkMcZdopY6KFwAAAABJRU5ErkJggg==" alt="Choose K"></img>
     </div>
@@ -234,10 +247,10 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
             <div class="card xl-4">
               <div class="card-body">
                 <div id="signup">
-                  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                  <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
                   <div id="mc_embed_signup">
                     <style>
-#signup { background:var(--background-dark); clear:left; }
+#signup { background:var(--transparent); clear:left; }
 #signup .mc-field-group { height:150px !important; margin-bottom:0px !important; }
 #signup #mce-responses {
   position:relative !important;
@@ -289,7 +302,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
   border:1px solid var(--surface-light) !important;
 }
 #signup #mce-EMAIL-HELPERTEXT {
-  background-color:var(--background-dark) !important;
+  background-color:var(--transparent) !important;
 }
 #signup #mc-embedded-subscribe {
   position:relative;
@@ -409,6 +422,43 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
 (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
+    </script>
+    <script>
+    const canvas = document.getElementById("background-pixels");
+    let backgroundPixelsVisible = false;
+    function backgroundPixels() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      const canvasHeight = canvas.getBoundingClientRect().height;
+      const canvasWidth = canvas.getBoundingClientRect().width;
+      const context = canvas.getContext("2d");
+      const pixelHeight = 27;
+      const pixelWidth = 27;
+      const colorRange = 30;
+      for (let y = 0; y < canvasHeight; y += pixelHeight) {
+        for (let x = 0; x < canvasWidth; x += pixelWidth) {
+          let r = Math.pow((2 * x) + (5 * y * y), 7) % colorRange;
+          if (r == 0) {
+            r = Math.pow((y + 1) * x * x * 17, 7) % colorRange;
+          }
+          r += Math.round(Math.random() * 6);
+          context.fillStyle = "rgb(" + [r, r, r].join(",") + ")";
+          context.fillRect(x, y, x + pixelWidth, y + pixelHeight);
+        }
+      }
+      if (!backgroundPixelsVisible) {
+        $("#background-pixels").fadeOut(0, function () {
+          canvas.style.opacity = 1;
+          $("#background-pixels").fadeIn(600);
+          backgroundPixelsVisible = true;
+        });
+      }
+    };
+    window.onresize = backgroundPixels;
+    window.onload = function () {
+      canvas.style.opacity = 0;
+      backgroundPixels();
+    }
     </script>
   </body>
 </html>
