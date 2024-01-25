@@ -114,7 +114,6 @@ a:hover { text-decoration:underline; font-weight:bold; color:var(--link-on-light
 .card-body { background-color:var(--surface-dark); }
 .tiles { margin-top:10px; margin-bottom:10px; padding-bottom:32px; }
 .tiles .card-deck { width:calc(100% - 60px); margin-left:30px; }
-.icon {}
 footer {
   width:calc(100% - 45px);
   margin:auto auto 0 auto; margin-left:30px; padding:0px;
@@ -134,11 +133,10 @@ footer .card { margin-bottom:0px !important; }
 footer .card-body-items { padding:22px 20px 6px 20px; background-color:var(--surface-light); }
 footer .card-body-items-left { float:left; }
 footer .card-body-items-right { float:right; }
-footer .item { margin:0px 25px 0px 0px; font-size:20px; font-weight:500; }
+footer .item { margin:0px; font-size:20px; font-weight:500; }
 footer .icon { position:relative; top:2px; margin-right:8px; font-size:26px; }
-footer .icon-last { position:relative; top:2px; font-size:26px; }
+footer .icon:last-child { margin-right:0px; }
 .bottom-spacer { min-height:15px; }
-@media all and (max-width:1200px) {}
 @media all and (max-width:991px) {
   .tiles .card { min-width:400px; }
 }
@@ -162,11 +160,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
     padding-top:0px; padding-bottom:0px;
     border-right:0px solid var(--background-dark);
   }
-  .main {
-    padding-bottom:54px;
-    font-size:24px; font-weight:500;
-    line-height:34px;
-  }
+  .main { padding-bottom:54px; font-size:24px; font-weight:500; line-height:34px; }
   .tiles .card { min-width:200px; }
   .tiles { margin-top:0px; margin-bottom:0px; padding-bottom:32px; }
   footer { width:calc(100% - 30px); margin-left:20px; }
@@ -177,8 +171,15 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
   footer .item { font-size:18px; }
   .bottom-spacer { min-height:10px; }
 }
-@media all and (max-width:440px) {
-  .card-body-items-left { display:none; }
+@media all and (max-width:600px) {
+  .content { padding-top:16px; }
+}
+@media all and (max-width:503px) {
+  .main { padding-bottom:40px; line-height:30px; }
+  .splash > img { margin-right:12px; }
+  footer .card-body-items { padding:15px 4px 0px 4px; }
+  footer .item { font-size:14px; }
+  footer .icon { font-size:20px; margin-right:4px; }
 }
     </style>
   </head>
@@ -324,6 +325,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
 #signup input.mce_inline_error {
   border:1px solid var(--surface-light) !important;
 }
+.optionalParent { text-align:right; }
 @media all and (max-width:1200px) {
   #signup #mce-EMAIL {
     width:calc(100% - 176px);
@@ -348,18 +350,14 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
     margin-bottom:82px !important;
     font-size:20px !important;
   }
-  #signup #mce-responses {
-    margin-top:74px !important;
-  }
+  #signup #mce-responses { margin-top:74px !important; }
   #signup #mc-embedded-subscribe {
     position:relative;
     top:-86px;
     width:100% !important;
     margin-right:52px;
   }
-  .optionalParent {
-    padding-right:4%;
-  }
+  .optionalParent { padding-right:4%; }
 }
                     </style>
                     <form action="https://choosek.us21.list-manage.com/subscribe/post?u=6857be21cdbcb21e1805fcacd&amp;id=fbb288fc4f&amp;f_id=002befe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -369,7 +367,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
                           <input type="email" name="EMAIL" class="required email rounded-0" id="mce-EMAIL" required="" value="" placeholder="Email address">
                           <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                         </div>
-                        <div class="optionalParent" style="text-align:right;">
+                        <div class="optionalParent">
                           <input type="submit" class="button"
                                  name="subscribe" id="mc-embedded-subscribe" 
                                  value="Subscribe"
@@ -405,7 +403,7 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
                   <span class="icon"><a href="mailto:contact@choosek.com"><i class="far fa-envelope"></i></a></span>
                   <span class="icon"><a href="https://twitter.com/choosekcorp"><i class="fab fa-x-twitter"></i></a></span>
                   <span class="icon"><a href="https://linkedin.com/company/choosek"><i class="fab fa-linkedin"></i></a></span>
-                  <span class="icon-last"><a href="https://github.com/choosek"><i class="fab fa-github"></i></a></span>
+                  <span class="icon"><a href="https://github.com/choosek"><i class="fab fa-github"></i></a></span>
                 </div>
               </div>
             </div>
@@ -424,41 +422,29 @@ footer .icon-last { position:relative; top:2px; font-size:26px; }
 (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
     </script>
     <script>
-    const canvas = document.getElementById("background-pixels");
-    let backgroundPixelsVisible = false;
     function backgroundPixels() {
+      const canvas = document.getElementById("background-pixels");
       canvas.width  = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
       const canvasHeight = canvas.getBoundingClientRect().height;
       const canvasWidth = canvas.getBoundingClientRect().width;
       const context = canvas.getContext("2d");
-      const pixelHeight = 27;
-      const pixelWidth = 27;
+      const pixelSize = Math.sqrt((canvasHeight * canvasWidth) / 800);
       const colorRange = 30;
-      for (let y = 0; y < canvasHeight; y += pixelHeight) {
-        for (let x = 0; x < canvasWidth; x += pixelWidth) {
+      for (let y = 0; y < canvasHeight; y += pixelSize) {
+        for (let x = 0; x < canvasWidth; x += pixelSize) {
           let r = Math.pow((2 * x) + (5 * y * y), 7) % colorRange;
           if (r == 0) {
             r = Math.pow((y + 1) * x * x * 17, 7) % colorRange;
           }
           r += Math.round(Math.random() * 6);
           context.fillStyle = "rgb(" + [r, r, r].join(",") + ")";
-          context.fillRect(x, y, x + pixelWidth, y + pixelHeight);
+          context.fillRect(x, y, x + pixelSize, y + pixelSize);
         }
-      }
-      if (!backgroundPixelsVisible) {
-        $("#background-pixels").fadeOut(0, function () {
-          canvas.style.opacity = 1;
-          $("#background-pixels").fadeIn(600);
-          backgroundPixelsVisible = true;
-        });
       }
     };
     window.onresize = backgroundPixels;
-    window.onload = function () {
-      canvas.style.opacity = 0;
-      backgroundPixels();
-    }
+    window.onload = backgroundPixels;
     </script>
   </body>
 </html>
