@@ -429,17 +429,22 @@ footer .icon:last-child { margin-right:0px; }
       const canvasHeight = canvas.getBoundingClientRect().height;
       const canvasWidth = canvas.getBoundingClientRect().width;
       const context = canvas.getContext("2d");
-      const pixelSize = Math.sqrt((canvasHeight * canvasWidth) / 800);
-      const colorRange = 30;
+      const pixelSize = Math.floor(Math.sqrt((canvasHeight * canvasWidth) / 1200));
+      const colorRange = 23;
+      const xCenter = Math.floor(canvasWidth / 2);
       for (let y = 0; y < canvasHeight; y += pixelSize) {
-        for (let x = 0; x < canvasWidth; x += pixelSize) {
-          let r = Math.pow((2 * x) + (5 * y * y), 7) % colorRange;
+        for (let x = 0; x < canvasWidth * 2; x += pixelSize) {
+          const yPixel = Math.floor(y / pixelSize);
+          const xPixel = Math.floor(x / pixelSize);
+          const even = xPixel % 2 == 0;
+          const x_ = (((even ? -1 : 1) * x) / 2) + xCenter - (even ? 0 : (pixelSize / 2));
+          let r = Math.pow((2 * xPixel) + (25 * yPixel * yPixel), 17) % colorRange;
           if (r == 0) {
-            r = Math.pow((y + 1) * x * x * 17, 7) % colorRange;
+            r = Math.pow((yPixel + 1) * xPixel * xPixel * 17, 4) % colorRange;
           }
-          r += Math.round(Math.random() * 6);
+          r += 5 + Math.round(Math.random() * 6);
           context.fillStyle = "rgb(" + [r, r, r].join(",") + ")";
-          context.fillRect(x, y, x + pixelSize, y + pixelSize);
+          context.fillRect(x_, y, pixelSize, pixelSize);
         }
       }
     };
