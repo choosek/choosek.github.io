@@ -60,8 +60,8 @@ body {
   z-index:999;
 }
 .splash img { height:270px; margin-top:64px; margin-bottom:96px; }
-a { text-decoration:underline; font-weight:bold; color:var(--link-on-light); }
-a:hover { text-decoration:underline; font-weight:bold; color:var(--link-on-light-hover); }
+a { text-decoration:none; font-weight:bold; color:var(--link-on-light); }
+a:hover { font-weight:bold; color:var(--link-on-light-hover); }
 .noselect {
   -webkit-touch-callout:none; /* iOS Safari */
     -webkit-user-select:none; /* Safari */
@@ -72,9 +72,13 @@ a:hover { text-decoration:underline; font-weight:bold; color:var(--link-on-light
                                  supported by Chrome, Edge, Opera and Firefox */
 }
 .card-window {
+  display:table;
   position:relative; top:-15px; left:-15px;
   border-right:15px solid var(--bevel-light);
 }
+.card-window > div { display:table-row; }
+.card-window > div > div { display:table-cell; }
+.card-window > div:last-child > div { padding-top:36px; text-align:right; }
 .content-shadow {
   position:relative; left:15px; top:-15px;
   width:calc(100% - 45px);
@@ -205,12 +209,30 @@ footer .icon:last-child { margin-right:0px; }
           <div class="card-deck xl-2">
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Protect transaction data and prevent front-running by maintaining and operating <a href="https://choosek.com/tinybook">encrypted order books</a>. 
+                <div>
+                  <div>
+                    Protect transaction data and prevent front-running by maintaining and operating <b>encrypted order books</b>.
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <a href="https://choosek.com/tinybook">Learn more &NestedGreaterGreater;</a>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Encrypt users' contributions in decentralized auctions and <a href="https://choosek.com/tinyvote">decision-making workflows</a>.
+                <div>
+                  <div>
+                    Encrypt users' contributions in decentralized auctions and other <b>decision-making workflows</b>.
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <a href="https://choosek.com/tinyvote">Learn more &NestedGreaterGreater;</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -234,7 +256,7 @@ footer .icon:last-child { margin-right:0px; }
             </div>
             <div class="card xl-4 card-shadow">
               <div class="card-body card-window">
-                Introduce <b>encrypted high-value data</b> into business workflows, expanding collaboration opportunities.
+                Introduce <b>encrypted data</b> into business workflows, enabling new opportunities for collaboration.
               </div>
             </div>
           </div>
