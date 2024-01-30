@@ -22,7 +22,8 @@ gtag('config', 'G-MMG3FX4XYB');
     </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@200..900&display=auto">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
 :root {
   --transparent:rgba(0,0,0,0);
@@ -33,14 +34,15 @@ gtag('config', 'G-MMG3FX4XYB');
   --surface-dark:#E3E3E3;
   --button-on-dark-highlighted:#F2F2F2;
   --text-on-light:#323232;
-  --text-on-dark:#FFFFFF;
+  --text-on-dark:#F2F2F2;
   --link-on-light:#000000;
   --link-on-light-hover:#404040;
 }
 html { height:100%; }
 body {
   display:flex; flex-direction:column;
-  height:100vh;
+  min-height:100vh;
+  min-width:480px !important;
   padding:0px;
   background-color:var(--background-dark); color:var(--text-on-light);
   font-family:"Saira",Verdana,sans-serif; font-size:24px; font-weight:500;
@@ -71,6 +73,7 @@ a:hover { font-weight:bold; color:var(--link-on-light-hover); }
             user-select:none; /* Non-prefixed version, currently
                                  supported by Chrome, Edge, Opera and Firefox */
 }
+.container { max-width:1140px; }
 .card-window {
   display:table;
   position:relative; top:-15px; left:-15px;
@@ -78,7 +81,7 @@ a:hover { font-weight:bold; color:var(--link-on-light-hover); }
 }
 .card-window > div { display:table-row; }
 .card-window > div > div { display:table-cell; }
-.card-window > div:last-child > div { padding-top:36px; text-align:right; }
+.card-window > div:last-child > div { padding-top:36px; vertical-align:bottom; text-align:right; }
 .content-shadow {
   position:relative; left:15px; top:-15px;
   width:calc(100% - 45px);
@@ -91,6 +94,7 @@ a:hover { font-weight:bold; color:var(--link-on-light-hover); }
 }
 .content {
   position:relative; left:-15px; top:-15px;
+  padding-left:30px; padding-right:30px;
   padding-top:60px; padding-bottom:15px;
   border-right:15px solid var(--bevel-light);
   background-color:var(--surface-light);
@@ -108,15 +112,17 @@ a:hover { font-weight:bold; color:var(--link-on-light-hover); }
 .secondary { padding-top:10px; padding-bottom:20px; font-weight:500; line-height:38px; }
 .secondary .card { background-color:var(--transparent); }
 .secondary .card-body { background-color:var(--transparent); }
+.col { margin-bottom:12px; }
 .card-shadow {
+  height:calc(100% - 58px);
   padding:0px !important;
   border-radius:0px !important;
   background-color:var(--shadow-dark) !important;
-  margin-bottom:60px !important; margin-left:30px !important;
+  margin-left:30px !important; margin-right:10px; margin-bottom:60px !important; 
 }
 .card { border:0px solid var(--surface-dark); }
 .card-body { background-color:var(--surface-dark); }
-.tiles { margin-top:10px; margin-bottom:10px; padding-bottom:32px; }
+.tiles { margin-top:10px; margin-bottom:15px; }
 .tiles .card-deck { width:calc(100% - 60px); margin-left:30px; }
 footer {
   width:calc(100% - 45px);
@@ -126,7 +132,7 @@ footer {
 }
 footer .footer-window {
   position:relative; top:-15px; left:-15px;
-  height:100%;
+  height:77px;
   border-right:15px solid var(--bevel-light);
   background-color:var(--surface-light);
 }
@@ -141,9 +147,11 @@ footer .item { margin:0px; font-size:20px; font-weight:500; }
 footer .icon { position:relative; top:2px; margin-right:8px; font-size:26px; }
 footer .icon:last-child { margin-right:0px; }
 .bottom-spacer { min-height:15px; }
-@media all and (max-width:991px) {
-  .tiles .card { min-width:400px; }
+@media all and (max-width:1300px) {
+  .content { padding-top:40px; }
+  .tiles { margin-bottom:0px; }
 }
+@media all and (max-width:1140px) { .tiles .card-body { text-align:left; } }
 @media all and (max-width:767px) {
   body { font-size:20px; line-height:26px; }
   .splash img { height:135px; margin-top:48px; margin-bottom:64px; }
@@ -156,7 +164,7 @@ footer .icon:last-child { margin-right:0px; }
   }
   .content {
     left:-10px; top:-10px;
-    padding-top:40px; padding-bottom:0px;
+    padding-bottom:0px;
     border-right:10px solid var(--bevel-light);
   }
   .content-free {
@@ -166,9 +174,10 @@ footer .icon:last-child { margin-right:0px; }
   }
   .main { padding-bottom:54px; font-size:24px; font-weight:500; line-height:34px; }
   .tiles .card { min-width:200px; }
-  .tiles { margin-top:0px; margin-bottom:0px; padding-bottom:32px; }
+  .tiles { margin-top:0px; margin-bottom:0px; padding-bottom:0px; }
   footer { width:calc(100% - 30px); margin-left:20px; }
   footer .footer-window {
+    height:72px;
     top:-10px; left:-10px;
     border-right:10px solid var(--bevel-light);
   }
@@ -176,11 +185,14 @@ footer .icon:last-child { margin-right:0px; }
   .bottom-spacer { min-height:10px; }
 }
 @media all and (max-width:600px) {
-  .content { padding-top:16px; }
+  .main { line-height:30px; }
+  .content { padding-top:28px; padding-right:18px; padding-left:18px; }
+  .col { padding-bottom:0px; }
+  .card-shadow { margin-left:10px !important; margin-right:0px !important; }
 }
-@media all and (max-width:503px) {
-  .main { padding-bottom:40px; line-height:30px; }
+@media all and (max-width:550px) {
   .splash > img { margin-right:12px; }
+  footer .footer-window { height:59px; }
   footer .card-body-items { padding:15px 4px 0px 4px; }
   footer .item { font-size:14px; }
   footer .icon { font-size:20px; margin-right:4px; }
@@ -206,57 +218,69 @@ footer .icon:last-child { margin-right:0px; }
           </div>
         </div>
         <div class="container tiles">
-          <div class="card-deck xl-2">
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                <div>
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
                   <div>
-                    Protect transaction data and prevent front-running by maintaining and operating <b>encrypted order books</b>.
+                    <div>
+                      Protect transaction data and prevent front-running by maintaining and operating <b>encrypted order books</b>.
+                    </div>
                   </div>
-                </div>
-                <div>
                   <div>
-                    <a href="https://choosek.com/tinybook">Learn more &NestedGreaterGreater;</a>
+                    <div>
+                      <a href="https://choosek.com/tinybook">Learn more &NestedGreaterGreater;</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                <div>
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
                   <div>
-                    Encrypt users' contributions in decentralized auctions and other <b>decision-making workflows</b>.
+                    <div>
+                      Encrypt users' contributions in decentralized auctions and other <b>decision-making workflows</b>.
+                    </div>
                   </div>
-                </div>
-                <div>
                   <div>
-                    <a href="https://choosek.com/tinyvote">Learn more &NestedGreaterGreater;</a>
+                    <div>
+                      <a href="https://choosek.com/tinyvote">Learn more &NestedGreaterGreater;</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card-deck xl-2">
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                Generate fully accurate <b>transaction cost analysis (TCA)</b> reports without decrypting customer data
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
+                  Generate fully accurate <b>transaction cost analysis (TCA)</b> reports without decrypting customer data
+                </div>
               </div>
             </div>
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                Compare encrypted customer data across financial institutions in <b>know your customer (KYC)</b> workflows.
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
+                  Compare encrypted customer data across financial institutions in <b>know your customer (KYC)</b> workflows.
+                </div>
               </div>
             </div>
           </div>
-          <div class="card-deck xl-2">
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                Address challenges associated with <b>maximal extractable value (MEV)</b> by working with encrypted transactions.
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
+                  Address challenges associated with <b>maximal extractable value (MEV)</b> by working with encrypted transactions.
+                </div>
               </div>
             </div>
-            <div class="card xl-4 card-shadow">
-              <div class="card-body card-window">
-                Introduce <b>encrypted data</b> into business workflows, enabling new opportunities for collaboration.
+            <div class="col">
+              <div class="card xl-4 card-shadow">
+                <div class="card-body card-window">
+                  Introduce <b>encrypted data</b> into business workflows, enabling new opportunities for collaboration.
+                </div>
               </div>
             </div>
           </div>
@@ -273,6 +297,7 @@ footer .icon:last-child { margin-right:0px; }
                   <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
                   <div id="mc_embed_signup">
                     <style>
+#signup h2 { color:var(--text-on-dark); }
 #signup { background:var(--transparent); clear:left; }
 #signup .mc-field-group { height:150px !important; margin-bottom:0px !important; }
 #signup #mce-responses {
@@ -366,7 +391,7 @@ footer .icon:last-child { margin-right:0px; }
     padding-left:8px !important;
   }
 }
-@media all and (max-width:503px) {
+@media all and (max-width:550px) {
   #signup #mce-EMAIL {
     width:100%;
     margin-bottom:82px !important;
@@ -438,7 +463,9 @@ footer .icon:last-child { margin-right:0px; }
             integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
             crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
 (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
