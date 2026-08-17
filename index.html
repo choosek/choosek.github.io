@@ -1,504 +1,1036 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Secure multi-party computation (MPC) and homomorphic encryption (HE) solutions for workflows that operate on encrypted data.">
-    <meta name="author" content="Choose K">
-    <title>Choose K</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMG3FX4XYB"></script>
-    <script>
-var favIcon = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpVIqDhYUEczQOtlFRRylikWwUNoKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdXFSdJES/5cUWsR4cNyPd/ced+8AoVllqtkzB6iaZaQTcTGXXxUDrwhiCAKiGJOYqSczi1l4jq97+Ph6F+NZ3uf+HP1KwWSATySeY7phEW8Qz2xaOud94jArSwrxOfGEQRckfuS67PIb55LDAs8MG9n0PHGYWCx1sdzFrGyoxNPEEUXVKF/Iuaxw3uKsVuusfU/+wlBBW8lwneYoElhCEimIkFFHBVVYiNGqkWIiTftxD/+I40+RSyZXBYwcC6hBheT4wf/gd7dmcWrSTQrFgd4X2/6IAoFdoNWw7e9j226dAP5n4Err+GtNYPaT9EZHixwBA9vAxXVHk/eAyx1g+EmXDMmR/DSFYhF4P6NvygODt0Bwze2tvY/TByBLXS3fAAeHwHiJstc93t3X3du/Z9r9/QC8rHLEluMd/wAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAA55JREFUWMPtlztLK2sUhp+JO+QmpBAvKSSgARELC7WIUcEmBEwhprHQxkr8CQqCjVhpZ+kPEKy8QWqjhREDghEkQQxekqiZZBKZye07zdk5aty6j1F3s18YmAwf33pmrfdbkyUBgj+oHy8fuN1uRkdHyWazqKrK/Px8TQFWV1dRVRVFUfD7/QQCgbcBOjo68Hq9pFIpFEWpGcDr9ZLNZnl4eCASiVQB6N7bwOfzMTw8/CnpbmlpYWRkpDoDbrebjo4OisUizc3N5HI5ZFkmm82i1+trChqNRkkmk7S2ttLX14fNZsNmsxEOhyvZEKurq+KnDg8Pxfb2tpicnBSTk5PC4/GIf41a0xUMBoUQQuzt7Ym9vT2xsLAgAPFmCWRZ5vb29kvcbzab8Xg8b3vg4eGBUCj0JQAGg4HGxsb3TfjV+gvwF+DH7yzq7e1lcHAQIQSZTAaAtbW1Z2ump6cxmUzkcjmKxSJnZ2fs7+9/DoDT6WR5eRmAQCBAuVx+FaC7u5tgMIimaezs7PwWwIdL4HA4cDgc6HSvb1FXV4fD4aChoaH2DLyUJEk4nU4A7u7ukGW5ao3VasXpdHJ+fs79/f3nAUiSVGmlAK2trdhsNkqlEgClUolyuYwQ4vNM+FT9/f0AuFwuAA4ODiiXy6yvr7OyslIB/LZj+PRN/2/wD3vgLYVCIc7Pzyu/8/n89wIIIVBV9XMz8LP5ABwdHVEoFNjc3ASoBBsfH6e+vp54PI6mafj9/krvqBng8vKycq+qKkIIYrHYszVGo5HOzk5yuRx6vR6j0fg9HgiFQpRKpapjZ7Va8fl8RKNRjo+P3wa4uLhga2sLg8GApmk0NTUxMDBAV1dX1d/ol4rFYsiyXAVQV1eHyWRiZmYGVVWJx+P4/X4ymQz5fJ6bmxuSySTS08nI5/PR09PDxMREZS4YGBigvb2dqakpJElCp9MhhOD09BSAzc1NZFlmdnYWi8WCTqdDkiSur6+5u7tjaWmpMhfs7u5WyhmNRgkEAs9LEAqFsNvtVXOBoijMzc1ht9sZGhp6NROLi4sAjI2NYbFYfpkxTdM4OTkhlUpVeyASiZBKpUgkEiiKwuPjI2azmUKhAEA6nSYajT7b8PHxscqwBoMBgHK5TCKRQFVV0uk0hUKBUqlEOBz+r3n9ajj1eDw0NjYCkEql2Nra+rBRXS4XbW1tFeCNjY33T8HV1RWKolT1gY/o6Wyhadrzj9ufHs//AWj91/9GnQwiAAAAAElFTkSuQmCC";
-var docHead = document.getElementsByTagName('head')[0];
-var newLink = document.createElement('link');
-newLink.rel = 'shortcut icon';
-newLink.type = 'image/x-icon';
-newLink.href = 'data:image/png;base64,'+favIcon;
-docHead.appendChild(newLink);
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-MMG3FX4XYB');
-    </script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@200..900&display=auto">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-:root {
-  --transparent:rgba(0,0,0,0);
-  --background-dark:#000000;
-  --shadow-dark:#717171;
-  --bevel-light:#D2D2D2;
-  --surface-light:#F3F3F3;
-  --surface-dark:#E3E3E3;
-  --button-on-dark-highlighted:#F2F2F2;
-  --text-on-light:#323232;
-  --text-on-dark:#F2F2F2;
-  --link-on-light:#000000;
-  --link-on-light-hover:#404040;
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Choose K builds production-grade private and secure computation solutions tailored to your use cases by leveraging multi-party computation, homomorphic encryption, and trusted execution environments.">
+<meta name="author" content="Choose K">
+<title>Choose K</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MMG3FX4XYB"></script>
+<script>
+  var favIcon = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpVIqDhYUEczQOtlFRRylikWwUNoKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdXFSdJES/5cUWsR4cNyPd/ced+8AoVllqtkzB6iaZaQTcTGXXxUDrwhiCAKiGJOYqSczi1l4jq97+Ph6F+NZ3uf+HP1KwWSATySeY7phEW8Qz2xaOud94jArSwrxOfGEQRckfuS67PIb55LDAs8MG9n0PHGYWCx1sdzFrGyoxNPEEUXVKF/Iuaxw3uKsVuusfU/+wlBBW8lwneYoElhCEimIkFFHBVVYiNGqkWIiTftxD/+I40+RSyZXBYwcC6hBheT4wf/gd7dmcWrSTQrFgd4X2/6IAoFdoNWw7e9j226dAP5n4Err+GtNYPaT9EZHixwBA9vAxXVHk/eAyx1g+EmXDMmR/DSFYhF4P6NvygODt0Bwze2tvY/TByBLXS3fAAeHwHiJstc93t3X3du/Z9r9/QC8rHLEluMd/wAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAA55JREFUWMPtlztLK2sUhp+JO+QmpBAvKSSgARELC7WIUcEmBEwhprHQxkr8CQqCjVhpZ+kPEKy8QWqjhREDghEkQQxekqiZZBKZye07zdk5aty6j1F3s18YmAwf33pmrfdbkyUBgj+oHy8fuN1uRkdHyWazqKrK/Px8TQFWV1dRVRVFUfD7/QQCgbcBOjo68Hq9pFIpFEWpGcDr9ZLNZnl4eCASiVQB6N7bwOfzMTw8/CnpbmlpYWRkpDoDbrebjo4OisUizc3N5HI5ZFkmm82i1+trChqNRkkmk7S2ttLX14fNZsNmsxEOhyvZEKurq+KnDg8Pxfb2tpicnBSTk5PC4/GIf41a0xUMBoUQQuzt7Ym9vT2xsLAgAPFmCWRZ5vb29kvcbzab8Xg8b3vg4eGBUCj0JQAGg4HGxsb3TfjV+gvwF+DH7yzq7e1lcHAQIQSZTAaAtbW1Z2ump6cxmUzkcjmKxSJnZ2fs7+9/DoDT6WR5eRmAQCBAuVx+FaC7u5tgMIimaezs7PwWwIdL4HA4cDgc6HSvb1FXV4fD4aChoaH2DLyUJEk4nU4A7u7ukGW5ao3VasXpdHJ+fs79/f3nAUiSVGmlAK2trdhsNkqlEgClUolyuYwQ4vNM+FT9/f0AuFwuAA4ODiiXy6yvr7OyslIB/LZj+PRN/2/wD3vgLYVCIc7Pzyu/8/n89wIIIVBV9XMz8LP5ABwdHVEoFNjc3ASoBBsfH6e+vp54PI6mafj9/krvqBng8vKycq+qKkIIYrHYszVGo5HOzk5yuRx6vR6j0fg9HgiFQpRKpapjZ7Va8fl8RKNRjo+P3wa4uLhga2sLg8GApmk0NTUxMDBAV1dX1d/ol4rFYsiyXAVQV1eHyWRiZmYGVVWJx+P4/X4ymQz5fJ6bmxuSySTS08nI5/PR09PDxMREZS4YGBigvb2dqakpJElCp9MhhOD09BSAzc1NZFlmdnYWi8WCTqdDkiSur6+5u7tjaWmpMhfs7u5WyhmNRgkEAs9LEAqFsNvtVXOBoijMzc1ht9sZGhp6NROLi4sAjI2NYbFYfpkxTdM4OTkhlUpVeyASiZBKpUgkEiiKwuPjI2azmUKhAEA6nSYajT7b8PHxscqwBoMBgHK5TCKRQFVV0uk0hUKBUqlEOBz+r3n9ajj1eDw0NjYCkEql2Nra+rBRXS4XbW1tFeCNjY33T8HV1RWKolT1gY/o6Wyhadrzj9ufHs//AWj91/9GnQwiAAAAAElFTkSuQmCC";
+  var docHead = document.getElementsByTagName('head')[0];
+  var newLink = document.createElement('link');
+  newLink.rel = 'shortcut icon';
+  newLink.type = 'image/x-icon';
+  newLink.href = 'data:image/png;base64,' + favIcon;
+  docHead.appendChild(newLink);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-MMG3FX4XYB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --void:#08080a; --void-2:#0c0c0f;
+  --paper:#f4f4f1; --paper-2:#eaeae5; --paper-3:#e0e0da;
+  --bevel:#d3d3cd; --shadow:#6d6d68;
+  --ink:#26261f; --ink-2:#57574f; --ink-3:#84847b; --ink-4:#b4b4aa;
+  --line:#151410; --line-2:#dcdcd4; --line-3:#e9e9e3;
+
+  --on-dark:#f2f2ee; --on-dark-2:#9a9a93; --on-dark-3:#6c6c66;
+  --screen:#0a0a0b; --screen-line:rgba(242,242,238,.06); --bar:#17170f;
+
+  --gry:#BBBBBB;
+  --grn:#5f9e79; --grn-ink:#3f7d59; --grn-deep:#26382f; --grn-deep-2:#18271f;
+  --grn-soft:rgba(95,158,121,.12); --grn-line:rgba(95,158,121,.32);
+  --yellow:#e3ad2a; --yellow-soft:rgba(227,173,42,.14);
+  --red-soft:rgba(150,86,70,.14); --red-ink:#8c5646;
+
+  --font:'Saira',Verdana,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Space Grotesk',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --lift:7px;
+  --maxw:1080px;
 }
-html { height:100%; }
-body {
-  display:flex; flex-direction:column;
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ color-scheme:dark; -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
   min-height:100vh;
-  min-width:480px !important;
-  padding:0px;
-  background-color:var(--background-dark); color:var(--text-on-light);
-  font-family:"Saira",Verdana,sans-serif; font-size:24px; font-weight:500;
-  line-height:32px;
+  background:var(--void); color:var(--on-dark);
+  font-family:var(--font); font-weight:400; font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-.background-pixels-container {
-  position:fixed;
-  width:100%; height:100%;
-  background-color:var(--background-dark);
-  z-index:0;
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; }
+::selection{ background:var(--grn); color:var(--void); }
+:focus-visible{ outline:2px solid var(--grn); outline-offset:2px; }
+.paper :focus-visible{ outline:2px solid var(--grn-ink); outline-offset:2px; }
+.mono{ font-family:var(--mono); }
+img{ max-width:100%; display:block; }
+
+/* ----- background wallpaper: pixel static + faint grid + vignette ----- */
+.bg{ position:fixed; inset:0; z-index:-1; overflow:hidden; background:var(--void); }
+#bgStatic{ position:absolute; inset:0; width:100%; height:100%; opacity:.62; }
+.bg-grid{
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 47px,rgba(242,242,238,.04) 47px 48px),
+    repeating-linear-gradient(90deg,transparent 0 47px,rgba(242,242,238,.04) 47px 48px);
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 24%, #000 0%, transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 24%, #000 0%, transparent 78%);
 }
-#background-pixels { height:100%; width:100%; }
-.splash {
-  width:100%;
-  margin:0px; padding:30px 10px 30px 30px;
-  text-align:center;
-  z-index:999;
+.bg::after{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 92% 62% at 50% 0%, transparent 34%, var(--void) 100%);
 }
-.splash img { height:270px; margin-top:64px; margin-bottom:96px; }
-a { text-decoration:none; font-weight:bold; color:var(--link-on-light); }
-a:hover { font-weight:bold; color:var(--link-on-light-hover); }
-.noselect {
-  -webkit-touch-callout:none; /* iOS Safari */
-    -webkit-user-select:none; /* Safari */
-     -khtml-user-select:none; /* Konqueror HTML */
-       -moz-user-select:none; /* Old versions of Firefox */
-        -ms-user-select:none; /* Internet Explorer/Edge */
-            user-select:none; /* Non-prefixed version, currently
-                                 supported by Chrome, Edge, Opera and Firefox */
+
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(8,8,10,.82); backdrop-filter:blur(9px);
+  border-bottom:1px solid rgba(242,242,238,.10);
 }
-.container { max-width:1140px; }
-.card-window {
-  display:table;
-  position:relative; top:-15px; left:-15px;
-  border-right:15px solid var(--bevel-light);
+.nav-in{
+  max-width:var(--maxw); margin:0 auto; padding:0 26px; height:58px;
+  display:flex; align-items:center; gap:18px;
 }
-.card-window > div { display:table-row; }
-.card-window > div > div { display:table-cell; }
-.card-window > div:last-child > div { padding-top:36px; vertical-align:bottom; text-align:right; }
-.content-shadow {
-  position:relative; left:15px; top:-15px;
-  width:calc(100% - 45px);
-  margin-left:15px; margin-bottom:30px;
-  background-color:var(--shadow-dark);
+.brand{ display:flex; align-items:center; gap:11px; margin-right:auto; }
+.brand .mk{ width:20px; height:20px; flex:0 0 auto; color:var(--on-dark); }
+.brand .wm{
+  font-family:var(--font); font-weight:700; font-size:18px; letter-spacing:.08em;
+  color:var(--on-dark);
 }
-.content-noshadow {
-  width:100%;
-  margin-bottom:30px;
+.brand .wm .k{ color:var(--grn); }
+.nav-tag{
+  font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--on-dark-3);
+  display:none; align-items:center; gap:8px;
 }
-.content {
-  position:relative; left:-15px; top:-15px;
-  padding-left:30px; padding-right:30px;
-  padding-top:60px; padding-bottom:15px;
-  border-right:15px solid var(--bevel-light);
-  background-color:var(--surface-light);
-  text-align:justify;
+.nav-tag .dot{ width:6px; height:6px; background:var(--grn); box-shadow:0 0 0 0 var(--grn-line);
+  animation:pulse 2.4s ease-in-out infinite; }
+@keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
+@media (min-width:620px){ .nav-tag{ display:flex; } }
+
+/* ============================== SHELL ============================== */
+.shell{ max-width:var(--maxw); margin:0 auto; padding:0 26px; }
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--on-dark-2); font-weight:500; display:inline-flex; align-items:center; gap:9px;
 }
-.content-free {
-  left:0; top:0;
-  padding-top:0px; padding-bottom:0px;
-  border-right:0px solid var(--background-dark);
-  background-color:var(--transparent);
-  color:var(--surface-light);
+.eyebrow::before{ content:''; width:7px; height:7px; background:var(--grn); flex:0 0 auto; }
+.paper .eyebrow{ color:var(--ink-3); }
+
+.hero{ text-align:left; padding:44px 0 24px; }
+.hero .logo{ display:block; width:136px; margin:46px auto 60px; filter:saturate(0) contrast(1.02); }
+.hero .kick{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--on-dark-2); line-height:1.5; margin-bottom:16px;
 }
-.main { padding-bottom:60px; font-size:30px; font-weight:500; line-height:38px; }
-.main .card-body { background-color:var(--surface-light); }
-.secondary { padding-top:10px; padding-bottom:20px; font-weight:500; line-height:38px; }
-.secondary .card { background-color:var(--transparent); }
-.secondary .card-body { background-color:var(--transparent); }
-.col { margin-bottom:12px; }
-.card-shadow {
-  height:calc(100% - 58px);
-  padding:0px !important;
-  border-radius:0px !important;
-  background-color:var(--shadow-dark) !important;
-  margin-left:30px !important; margin-right:10px; margin-bottom:60px !important; 
+.hero .kick .br{ color:var(--grn); }
+.hero h1{
+  font-family:var(--font); font-weight:300; letter-spacing:-.02em; line-height:1.08;
+  font-size:clamp(27px,4.3vw,37px); color:var(--on-dark); max-width:none; margin:0;
 }
-.card { border:0px solid var(--surface-dark); }
-.card-body { background-color:var(--surface-dark); }
-.tiles { margin-top:10px; margin-bottom:15px; }
-.tiles .card-deck { width:calc(100% - 60px); margin-left:30px; }
-footer {
-  width:calc(100% - 45px);
-  margin:auto auto 0 auto; margin-left:30px; padding:0px;
-  background-color:var(--shadow-dark);
-  z-index:999;
+.hero h1 b{ font-weight:600;  }
+.hero h1 .hl{ color:var(--grn); font-weight:500; }
+.hero .lede{
+  max-width:none; margin:16px 0 0; font-size:clamp(14px,1.3vw,15.5px);
+  color:var(--on-dark-2); line-height:1.68; font-weight:400; text-align:justify; text-justify:inter-word;
 }
-footer .footer-window {
-  position:relative; top:-15px; left:-15px;
-  height:77px;
-  border-right:15px solid var(--bevel-light);
-  background-color:var(--surface-light);
+.hero .lede b{ color:var(--on-dark); font-weight:600; }
+.hero .modes{
+  display:flex; justify-content:flex-start; flex-wrap:wrap; gap:8px; margin-top:20px;
 }
-footer .container { padding-left:20px; padding-right:20px; }
-footer a { color:var(--link-on-light); }
-footer a:hover { color:var(--link-on-light-hover); }
-footer .card { margin-bottom:0px !important; }
-footer .card-body-items { padding:22px 20px 6px 20px; background-color:var(--surface-light); }
-footer .card-body-items-left { float:left; }
-footer .card-body-items-right { float:right; }
-footer .item { margin:0px; font-size:20px; font-weight:500; }
-footer .icon { position:relative; top:2px; margin-right:8px; font-size:26px; }
-footer .icon:last-child { margin-right:0px; }
-.bottom-spacer { min-height:15px; }
-@media all and (max-width:1300px) {
-  .content { padding-top:40px; }
-  .tiles { margin-bottom:0px; }
+.chip{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--on-dark-2);
+  border:1px solid rgba(242,242,238,.16); padding:7px 13px; display:inline-flex; gap:8px; align-items:center;
 }
-@media all and (max-width:1140px) { .tiles .card-body { text-align:left; } }
-@media all and (max-width:767px) {
-  body { font-size:20px; line-height:26px; }
-  .splash img { height:135px; margin-top:48px; margin-bottom:64px; }
-  .card-window { top:-10px; left:-10px; border-right:10px solid var(--bevel-light); }
-  .card-body-items-left { margin-top:1px; font-size:18px; }
-  .content-shadow {
-    left:10px; top:-10px;
-    width:calc(100% - 30px); 
-    margin-left:10px; margin-bottom:15px;
-  }
-  .content {
-    left:-10px; top:-10px;
-    padding-bottom:0px;
-    border-right:10px solid var(--bevel-light);
-  }
-  .content-free {
-    left:0; top:0;
-    padding-top:0px; padding-bottom:0px;
-    border-right:0px solid var(--background-dark);
-  }
-  .main { padding-bottom:54px; font-size:24px; font-weight:500; line-height:34px; }
-  .tiles .card { min-width:200px; }
-  .tiles { margin-top:0px; margin-bottom:0px; padding-bottom:0px; }
-  footer { width:calc(100% - 30px); margin-left:20px; }
-  footer .footer-window {
-    height:72px;
-    top:-10px; left:-10px;
-    border-right:10px solid var(--bevel-light);
-  }
-  footer .item { font-size:18px; }
-  .bottom-spacer { min-height:10px; }
+.chip::before{ content:''; width:9px; height:9px; background:var(--grn); flex:0 0 auto; }
+.chip.pq::before{ background:var(--yellow); }
+@media (max-width:560px){ .hero .lede{ text-align:left; } .hero .logo{ width:108px; margin:4px auto 28px; } }
+
+/* ============================== COMPACT FOCUS CARDS ============================== */
+.focus{ padding:26px 0 30px; }
+.flabel{
+  display:flex; align-items:center; gap:12px; margin:0 0 12px;
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--on-dark-2);
 }
-@media all and (max-width:600px) {
-  .main { line-height:30px; }
-  .content { padding-top:28px; padding-right:18px; padding-left:18px; }
-  .col { padding-bottom:0px; }
-  .card-shadow { margin-left:10px !important; margin-right:0px !important; }
+.flabel .idx{ color:var(--grn); font-weight:700; }
+.flabel .ln{ flex:1; height:1px; background:rgba(242,242,238,.13); min-width:24px; }
+
+.cbody{ display:flex; align-items:stretch; }
+.c-text{ flex:0 0 41%; padding:20px 22px; display:flex; flex-direction:column; justify-content:flex-start; min-width:0; }
+.c-viz{ flex:1 1 59%; display:flex; align-items:center; justify-content:center; padding:16px; min-width:0; border-left:1px solid var(--line-2); }
+.cbody.rev{ flex-direction:row-reverse; }
+.cbody.rev .c-viz{ border-left:0; border-right:1px solid var(--line-2); }
+.c-text h3{ font-family:var(--font); font-weight:600; font-size:19px; letter-spacing:-.01em; color:var(--ink); line-height:1.22; margin-bottom:12px; }
+.c-text .sub-line{ font-family:var(--mono); font-size:10.5px; letter-spacing:.04em; color:var(--grn-ink); margin-top:7px; }
+.c-text p{ font-size:16px; line-height:1.62; color:var(--ink-2); margin-top:10px; }
+.c-text p b{ color:var(--ink); font-weight:600; }
+.c-text .btn{ margin-top:auto; align-self:flex-start; }
+.c-text .minitags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:7px; }
+.c-text .minitags span{ font-family:var(--mono); font-size:10.5px; color:var(--ink-2); border:1px solid var(--line-2); padding:4px 8px; }
+.c-text .minitags span b{ color:var(--grn-ink); font-weight:700; }
+.c-viz .screen, .c-viz .dag-wrap{ width:100%; }
+@media (max-width:760px){
+  .cbody, .cbody.rev{ flex-direction:column; }
+  .c-viz{ border-left:0 !important; border-right:0 !important; border-top:1px solid var(--line-2); flex-basis:auto; }
+  .c-text{ flex-basis:auto; }
 }
-@media all and (max-width:550px) {
-  .splash > img { margin-right:12px; }
-  footer .footer-window { height:59px; }
-  footer .card-body-items { padding:15px 4px 0px 4px; }
-  footer .item { font-size:14px; }
-  footer .icon { font-size:20px; margin-right:4px; }
+
+/* two-project sub-panels (post-quantum section) */
+.duo2{ display:flex; align-items:stretch; }
+.duo2 .sub{ flex:1 1 50%; padding:18px 20px; display:flex; flex-direction:column; min-width:0; }
+.duo2 .sub + .sub{ border-left:1px solid var(--line-2); }
+.sub .slabel{ font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:11px; display:flex; align-items:center; gap:8px; }
+.sub .slabel::before{ content:''; width:6px; height:6px; background:var(--grn); flex:0 0 auto; }
+.sub p{ font-size:16px; line-height:1.58; color:var(--ink-2); margin-top:11px; }
+.sub p b{ color:var(--ink); font-weight:600; }
+.sub .btn{ margin-top:auto; align-self:flex-start; }
+.sub .eqn-cap{ font-family:var(--mono); font-size:11.5px; color:var(--ink); margin-top:11px; padding:8px 10px; border:1px solid var(--line-2); background:var(--paper-2); overflow-x:auto; white-space:nowrap; }
+.sub .eqn-cap i{ font-style:italic; } .sub .eqn-cap .op{ color:var(--ink-3); } .sub .eqn-cap .g{ color:var(--grn-ink); }
+.sub .eqn-cap sub,.sub .eqn-cap sup{ font-size:72%; }
+@media (max-width:760px){ .duo2{ flex-direction:column; } .duo2 .sub + .sub{ border-left:0; border-top:1px solid var(--line-2); } }
+
+/* mini handshake visual (post-quantum readiness) */
+.hs{ padding:14px 15px; font-family:var(--mono); }
+.hs .r{ display:flex; align-items:center; gap:10px; padding:8px 0; font-size:12px; border-bottom:1px solid rgba(242,242,238,.08); }
+.hs .r:last-child{ border-bottom:0; }
+.hs .r .lab{ color:var(--on-dark-3); width:56px; flex:0 0 auto; }
+.hs .r .grp{ color:var(--on-dark-2); }
+.hs .r.pq .grp{ color:var(--on-dark); }
+.hs .r .mark{ margin-left:auto; display:flex; align-items:center; gap:6px; font-size:10.5px; letter-spacing:.06em; color:var(--on-dark-3); }
+.hs .r.pq .mark{ color:var(--grn); }
+.hs .r .dot{ width:7px; height:7px; flex:0 0 auto; border:1px solid var(--on-dark-3); }
+.hs .r.pq .dot{ background:var(--grn); border-color:var(--grn); }
+
+/* ============================== SECTION HEADERS ============================== */
+.sec{ padding:44px 0 8px; }
+.sec-head{ display:flex; align-items:center; gap:16px; margin-bottom:22px; flex-wrap:wrap; }
+.sec-head .n{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--on-dark-3);
+  display:flex; align-items:center; gap:9px;
+  flex-basis:100%; margin-bottom:9px;
 }
-    </style>
-  </head>
-  <body>
-    <div class="background-pixels-container">
-      <canvas id="background-pixels"></canvas>
+.sec-head .n::before{ content:''; width:7px; height:7px; background:var(--grn); flex:0 0 auto; }
+.sec-head h2{
+  font-family:var(--font); font-weight:400; letter-spacing:-.01em; line-height:1.1;
+  font-size:clamp(21px,2.6vw,29px); color:var(--on-dark);
+}
+.sec-head h2 b{ font-weight:600; }
+.sec-head .rule{ flex:1 1 120px; height:1px; background:rgba(242,242,238,.12);
+  align-self:center; min-width:40px; }
+.sec-sub{ color:var(--on-dark-2); font-size:15px; line-height:1.7; max-width:74ch; margin:-10px 0 24px; }
+.sec-sub b{ color:var(--on-dark); font-weight:600; }
+
+/* ============================== WINDOW / PAPER PANELS ============================== */
+.paper{
+  background:var(--paper); color:var(--ink);
+  box-shadow:var(--lift) var(--lift) 0 0 var(--shadow);
+  border:1px solid var(--line);
+}
+.win-bar{
+  display:flex; align-items:center; gap:11px; padding:9px 14px;
+  background:var(--bar); border-bottom:1px solid var(--line);
+}
+.win-bar .lights{ display:flex; gap:6px; }
+.win-bar .lights i{ width:9px; height:9px; border:1px solid rgba(242,242,238,.4); display:inline-block; }
+.win-bar .lights i.on{ background:var(--grn); border-color:var(--grn); }
+.win-bar .lights i.y{ background:var(--yellow); border-color:var(--yellow); }
+.win-title{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--on-dark); font-weight:600;
+}
+.win-meta{
+  margin-left:auto; font-family:var(--mono); font-size:10.5px; letter-spacing:.06em;
+  color:rgba(242,242,238,.62); display:flex; align-items:center; gap:7px;
+}
+.win-meta .live{ width:6px; height:6px; background:var(--gry); display:inline-block;
+  animation:pulse 2s ease-in-out infinite; }
+.win-body{ padding:22px; }
+@media (max-width:640px){ .win-meta { display:none; } .win-body{ padding:16px; } .paper{ box-shadow:4px 4px 0 0 var(--shadow); } }
+
+.lead{ font-size:16px; line-height:1.68; color:var(--ink-2); }
+.lead b{ color:var(--ink); font-weight:600; }
+.corner{ position:relative; }
+.corner::before,.corner::after{ content:''; position:absolute; width:11px; height:11px;
+  border:1.5px solid var(--ink-4); pointer-events:none; }
+.corner::before{ top:-1px; left:-1px; border-right:0; border-bottom:0; }
+.corner::after{ bottom:-1px; right:-1px; border-left:0; border-top:0; }
+
+/* two-column split inside a window */
+.split{ display:grid; grid-template-columns:1.02fr .98fr; gap:20px; align-items:stretch; }
+@media (max-width:820px){ .split{ grid-template-columns:1fr; } }
+
+/* mono feature list */
+.flist{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-2);
+  border:1px solid var(--line-2); margin-top:16px; }
+.flist .f{ background:var(--paper); padding:11px 13px; }
+.flist .f .fx{ font-family:var(--mono); font-size:10px; color:var(--grn-ink); font-weight:600;
+  letter-spacing:.06em; }
+.flist .f b{ display:block; font-size:13px; font-weight:600; color:var(--ink); margin:3px 0 1px; }
+.flist .f span{ font-size:11.5px; color:var(--ink-3); line-height:1.5; }
+@media (max-width:520px){ .flist{ grid-template-columns:1fr; } }
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+  font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+  padding:12px 18px; border:1px solid var(--line); background:var(--paper); color:var(--ink);
+  transition:transform .12s ease, background .15s ease, color .15s ease;
+}
+.btn .ar{ transition:transform .15s ease; }
+.btn:hover .ar{ transform:translateX(3px); }
+.btn.green{ background:var(--grn-deep); color:var(--on-dark); border-color:var(--grn-deep);
+  box-shadow:4px 4px 0 0 var(--shadow); }
+.btn.green:hover{ background:var(--grn-deep-2); }
+.btn.green:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 0 var(--shadow); }
+.btn.ghost{ background:transparent; color:var(--ink); }
+.btn.ghost:hover{ background:var(--ink); color:var(--paper); }
+.btn-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+
+/* dark inset screen (shared container for live visuals) */
+.screen{
+  background:var(--screen); border:1px solid #000; position:relative; overflow:hidden;
+  background-image:linear-gradient(rgba(242,242,238,.02) 1px,transparent 1px);
+  background-size:100% 3px;
+}
+.screen-cap{ display:flex; align-items:center; justify-content:space-between; padding:9px 12px;
+  border-bottom:1px solid rgba(242,242,238,.09); }
+.screen-cap .t{ font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--on-dark-2); }
+.screen-cap .r{ font-family:var(--mono); font-size:10px; color:var(--on-dark-3); }
+
+/* ---------- Kinetics: code screen ---------- */
+.code{ font-family:var(--mono); font-size:12px; line-height:1.72; color:var(--on-dark-2);
+  padding:14px 15px; white-space:pre; overflow-x:auto; tab-size:2; }
+.code::-webkit-scrollbar{ height:7px; }
+.code::-webkit-scrollbar-thumb{ background:var(--on-dark-3); }
+.code .kw{ color:#9ec7ff; }        /* keyword */
+.code .ty{ color:#e7c98a; }        /* type */
+.code .fn{ color:var(--grn); }     /* fn / method */
+.code .cm{ color:#6f7f74; font-style:italic; } /* comment */
+.code .at{ color:var(--on-dark-3); }/* attr / punctuation-ish */
+.code .st{ color:#c9b6e6; }
+
+/* ---------- Kinetics: DAG (light schematic inset) ---------- */
+.dag-wrap{ border:1px solid var(--line-2); background:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 15px,rgba(21,20,16,.028) 15px 16px),
+    repeating-linear-gradient(90deg,transparent 0 15px,rgba(21,20,16,.028) 15px 16px);
+}
+.dag-cap{ display:flex; justify-content:space-between; align-items:center; padding:8px 12px;
+  border-bottom:1px solid var(--line-2); background:var(--paper-2); }
+.dag-cap .t{ font-family:var(--mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--ink-2); font-weight:600; }
+.dag-cap .t2{ font-family:var(--mono); font-size:10px; color:var(--ink-3); }
+.dag-cap .t2 em{ color:var(--grn-ink); font-style:normal; }
+.dag svg{ display:block; width:100%; height:auto; }
+.gedge{ stroke:var(--ink-4); stroke-width:1; fill:none; }
+.gedge.crit{ stroke:var(--grn); stroke-width:1.75; }
+.gnode{ fill:var(--paper); stroke:var(--ink); stroke-width:1; }
+.gnode.in{ fill:var(--paper-2); stroke-dasharray:3 2; }
+.gnode.gas{ fill:var(--yellow-soft); }
+.gnode.crit{ stroke:var(--grn); stroke-width:2; }
+.gt{ font-family:var(--mono); font-size:9.5px; fill:var(--ink); }
+.gsub{ font-family:var(--mono); font-size:8px; fill:var(--ink-3); }
+.glbl{ font-family:var(--mono); font-size:7.5px; fill:var(--ink-4); }
+
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line-2);
+  margin-top:14px; }
+.stat{ padding:10px 12px; border-right:1px solid var(--line-2); }
+.stat:last-child{ border-right:0; }
+.stat .k{ font-family:var(--mono); font-size:8.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; }
+.stat .v{ font-family:var(--mono); font-size:17px; font-weight:600; color:var(--ink); margin-top:4px;
+  letter-spacing:-.01em; }
+.stat .v.g{ color:var(--grn-ink); }
+.stat .s{ font-size:9px; color:var(--ink-3); margin-top:1px; }
+@media (max-width:520px){ .stats{ grid-template-columns:repeat(2,1fr); }
+  .stat:nth-child(2){ border-right:0; } }
+
+/* ---------- Post-quantum & network: 2-up ---------- */
+.duo{ display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
+@media (max-width:880px){ .duo{ grid-template-columns:1fr; } }
+.duo .paper{ display:flex; flex-direction:column; }
+.duo .win-body{ display:flex; flex-direction:column; flex:1; }
+.duo .lead{ font-size:14.5px; }
+.push{ margin-top:auto; }
+
+/* PQ scan screen */
+.scan{ height:196px; overflow:hidden; padding:12px 14px; font-family:var(--mono);
+  font-size:11.5px; line-height:1.85; color:var(--on-dark-2); }
+.scan .ln{ display:flex; gap:9px; white-space:pre-wrap; word-break:break-word; }
+.scan .tm{ color:var(--on-dark-3); flex:0 0 auto; }
+.scan .tg{ color:var(--on-dark-3); flex:0 0 auto; min-width:44px; }
+.scan .ms{ color:var(--on-dark-2); }
+.scan .ok .tg,.scan .ok .ms{ color:var(--grn); font-weight:600; }
+.scan .hi .tg{ color:var(--on-dark); }
+.scan .cur{ display:inline-block; width:8px; height:14px; background:var(--grn);
+  vertical-align:-2px; animation:blink 1.05s steps(1) infinite; }
+@keyframes blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
+.verdict{ display:flex; align-items:center; gap:12px; margin-top:14px; padding:12px 14px;
+  border:1px solid var(--line-2); background:var(--paper-2); }
+.verdict .tag{ font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.08em;
+  padding:6px 11px; background:var(--grn-deep); color:var(--on-dark); }
+.verdict .d b{ font-size:13px; color:var(--ink); font-weight:600; display:block; }
+.verdict .d span{ font-size:11px; color:var(--ink-3); font-family:var(--mono); }
+.kv{ margin-top:12px; }
+.kv .row{ display:flex; justify-content:space-between; gap:12px; padding:7px 0;
+  border-bottom:1px solid var(--line-3); font-family:var(--mono); font-size:11.5px; }
+.kv .row:last-child{ border-bottom:0; }
+.kv .row span{ color:var(--ink-3); }
+.kv .row b{ color:var(--ink); font-weight:600; text-align:right; }
+.kv .row b em{ color:var(--grn-ink); font-style:normal; }
+
+/* Network node viz + math */
+.net-screen{ height:150px; }
+.net-screen svg{ display:block; width:100%; height:100%; }
+.nedge{ stroke:rgba(242,242,238,.16); stroke-width:1; fill:none; }
+.nedge.hot{ stroke:var(--grn-line); }
+.nnode circle{ fill:var(--screen); stroke:var(--on-dark-3); stroke-width:1.3; }
+.nnode.core circle{ stroke:var(--on-dark); stroke-width:1.6; fill:#0e0e10; }
+.nnode.win circle{ stroke:var(--grn); fill:rgba(95,158,121,.18); }
+.nlabel{ font-family:var(--mono); font-size:12px; fill:var(--on-dark-3); }
+.pip{ fill:var(--grn); }
+.mathbox{ margin-top:14px; border:1px solid var(--line-2); }
+.mathbox .mh{ display:flex; justify-content:space-between; padding:7px 12px;
+  border-bottom:1px solid var(--line-2); background:var(--paper-2);
+  font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); }
+.mathbox .mh em{ color:var(--grn-ink); font-style:normal; }
+.eqn{ padding:12px 14px; font-family:var(--mono); font-size:13px; color:var(--ink); line-height:2.05;
+  overflow-x:auto; white-space:nowrap; }
+.eqn .row{ display:block; }
+.eqn i{ font-style:italic; }
+.eqn .op{ color:var(--ink-3); }
+.eqn .g{ color:var(--grn-ink); }
+.eqn sub,.eqn sup{ font-family:var(--mono); font-size:71%; }
+.eqn .lbl{ color:var(--ink-3); font-size:11px; }
+.eqn::-webkit-scrollbar{ height:6px; }
+.eqn::-webkit-scrollbar-thumb{ background:var(--ink-4); }
+
+/* ---------- Finance: order book dissolve ---------- */
+.fin-split{ display:grid; grid-template-columns:.92fr 1.08fr; gap:22px; align-items:stretch; }
+@media (max-width:820px){ .fin-split{ grid-template-columns:1fr; } }
+.tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }
+.tags span{ font-family:var(--mono); font-size:11px; color:var(--ink-2);
+  border:1px solid var(--line-2); padding:6px 10px; }
+.tags span::before{ content:'› '; color:var(--grn-ink); }
+.tri{ display:flex; gap:0; margin-top:16px; border:1px solid var(--line-2); }
+.tri .t{ flex:1; padding:11px 12px; border-right:1px solid var(--line-2); }
+.tri .t:last-child{ border-right:0; }
+.tri .t .x{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.08em; color:var(--grn-ink); }
+.tri .t p{ font-size:11.5px; color:var(--ink-3); line-height:1.5; margin-top:5px; }
+
+.book-screen{ display:flex; flex-direction:column; }
+.book{ position:relative; flex:1; padding:10px 12px 12px; font-family:var(--mono); }
+.book-head{ display:grid; grid-template-columns:1fr 84px 96px; gap:8px; padding:0 6px 8px;
+  font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--on-dark-3);
+  border-bottom:1px solid rgba(242,242,238,.09); }
+.book-head span:nth-child(2),.book-head span:nth-child(3){ text-align:right; }
+.lvl{ position:relative; display:grid; grid-template-columns:1fr 84px 96px; gap:8px;
+  padding:3.5px 6px; font-size:12px; align-items:center; }
+.lvl .depth{ position:absolute; top:1px; bottom:1px; right:0; }
+.lvl.ask .depth{ background:rgba(150,86,70,.14); }
+.lvl.bid .depth{ background:rgba(95,158,121,.14); }
+.lvl .px{ position:relative; z-index:1; color:var(--on-dark); }
+.lvl.ask .px{ color:#c79b8c; }
+.lvl.bid .px{ color:#8fc7a4; }
+.lvl .sz,.lvl .tot{ position:relative; z-index:1; text-align:right; color:var(--on-dark-2); }
+.lvl .tot{ color:var(--on-dark-3); }
+.lvl.sealed .px,.lvl.sealed .sz,.lvl.sealed .tot{ color:transparent; }
+.mid{ display:grid; grid-template-columns:1fr auto; align-items:center; gap:10px;
+  margin:7px 0; padding:9px 10px; border-top:1px solid rgba(242,242,238,.14);
+  border-bottom:1px solid rgba(242,242,238,.14); }
+.mid .lab{ font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--on-dark-3); }
+.mid .clr{ font-size:20px; font-weight:700; color:var(--grn); letter-spacing:.01em; }
+.mid .clr .u{ font-size:11px; color:var(--on-dark-3); font-weight:500; margin-left:6px; }
+.mid .st{ font-size:9.5px; color:var(--grn); font-family:var(--mono); text-align:right; }
+.book-foot{ display:flex; justify-content:space-between; padding:8px 14px;
+  border-top:1px solid rgba(242,242,238,.09); font-family:var(--mono); font-size:10px;
+  color:var(--on-dark-3); }
+.book-foot em{ color:var(--grn); font-style:normal; }
+/* pixel overlay canvas sits above the sealed rows */
+.book canvas.px-layer{ position:absolute; inset:0; pointer-events:none; z-index:2; }
+
+/* ============================== SUBSCRIBE ============================== */
+.subscribe{ padding:56px 0 20px; }
+.sub-card{ margin:0 auto; }
+.sub-card .win-body{ padding:26px 26px 28px; }
+.sub-card h3{ font-family:var(--font); font-weight:400; font-size:clamp(19px,2.4vw,25px);
+  color:var(--ink); letter-spacing:-.01em; }
+.sub-card h3 b{ font-weight:600; }
+.sub-card p.small{ font-size:13px; color:var(--ink-3); margin-top:6px; line-height:1.6; }
+#signup{ margin-top:18px; }
+#signup .mc-field-group{ display:flex; gap:10px; }
+#signup input[type=email]{
+  flex:1; min-width:0; font-family:var(--mono); font-size:14px; padding:13px 14px;
+  background:var(--paper-2); border:1px solid var(--line); color:var(--ink); border-radius:0;
+}
+#signup input[type=email]:focus{ outline:2px solid var(--grn-ink); outline-offset:1px; }
+#signup input[type=email]::placeholder{ color:var(--ink-4); }
+#signup input[type=submit]{
+  font-family:var(--mono); font-size:12.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+  padding:13px 22px; border:1px solid var(--grn-deep); background:var(--grn-deep); color:var(--on-dark);
+  cursor:pointer; border-radius:0; box-shadow:4px 4px 0 0 var(--shadow); transition:transform .12s ease, background .15s ease; white-space:nowrap;
+}
+#signup input[type=submit]:hover{ background:var(--grn-deep-2); }
+#signup input[type=submit]:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 0 var(--shadow); }
+#signup .mce_inline_error{ margin-top:8px !important; padding:8px 10px !important;
+  background:var(--red-soft) !important; color:var(--red-ink) !important; font-family:var(--mono) !important;
+  font-size:12px !important; font-weight:500 !important; border:1px solid rgba(150,86,70,.3) !important; }
+#signup div.mce_inline_error{ background:var(--red-soft) !important; }
+#signup #mce-responses{ margin-top:8px; }
+#signup .response{ font-family:var(--mono); font-size:12.5px; padding:10px 12px !important; }
+#signup #mce-error-response{ background:var(--red-soft); color:var(--red-ink); border:1px solid rgba(150,86,70,.3); }
+#signup #mce-success-response{ background:var(--grn-soft); color:var(--grn-ink); border:1px solid var(--grn-line); }
+.helper_text{ background:transparent !important; }
+@media (max-width:520px){ #signup .mc-field-group{ flex-direction:column; }
+  #signup input[type=submit]{ width:100%; } }
+
+footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
+.foot-card{ display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:16px 20px; }
+.foot-l{ font-family:var(--font); font-size:15.5px; color:var(--ink-2); letter-spacing:.02em; }
+.foot-r{ display:flex; align-items:center; gap:6px; }
+.foot-r a{ width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+  color:var(--ink-2); border:1px solid transparent; transition:color .15s ease, border-color .15s ease, background .15s ease; }
+.foot-r a:hover{ color:var(--grn-ink); border-color:var(--line-2); background:var(--paper-2); }
+.foot-r svg{ width:24px; height:24px; }
+.spacer{ height:26px; }
+@media (max-width:520px){ .foot-card{ flex-direction:column; gap:14px; text-align:center; }
+  .foot-l{ font-size:11.5px; } }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important;
+     transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <canvas id="bgStatic"></canvas>
+  <div class="bg-grid"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Choose K">
+      <span class="wm">CHOOSE&nbsp;<span class="k">K</span></span>
+    </a>
+    <span class="nav-tag mono" style="line-height:13px; text-align:right;">APPLIED CRYPTOGRAPHY AND<br/>PRIVACY-ENHANCING TECHNOLOGIES</span>
+  </div>
+</nav>
+
+<main class="shell" id="top">
+
+  <section class="hero">
+    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAEOCAYAAAC0KMNOAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpVIqDhYUEczQOtlFRRylikWwUNoKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdXFSdJES/5cUWsR4cNyPd/ced+8AoVllqtkzB6iaZaQTcTGXXxUDrwhiCAKiGJOYqSczi1l4jq97+Ph6F+NZ3uf+HP1KwWSATySeY7phEW8Qz2xaOud94jArSwrxOfGEQRckfuS67PIb55LDAs8MG9n0PHGYWCx1sdzFrGyoxNPEEUXVKF/Iuaxw3uKsVuusfU/+wlBBW8lwneYoElhCEimIkFFHBVVYiNGqkWIiTftxD/+I40+RSyZXBYwcC6hBheT4wf/gd7dmcWrSTQrFgd4X2/6IAoFdoNWw7e9j226dAP5n4Err+GtNYPaT9EZHixwBA9vAxXVHk/eAyx1g+EmXDMmR/DSFYhF4P6NvygODt0Bwze2tvY/TByBLXS3fAAeHwHiJstc93t3X3du/Z9r9/QC8rHLEluMd/wAAAAlwSFlzAAALEwAACxMBAJqcGAAAA89JREFUeNrt3M0J2zAYgOG4zgRZI6CdPILA12wg0AieShvknA2Ee+ixLZQvUMXx89yFf+K8yAd/02WQ3vseXdtaCx83pTRdwPM8zA+PCyA6gOgAiA4gOgCiA4gOIDoAogOIDoDoAKIDIDqA6AAncj3bBeecwyMIaq3GYuB5ttMBvF4BiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiA/DPpt57+NP41lr4wNu2Dblg4yn4NO+MpyilXEb8f1NK4f+RnQ7g9QoQHQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAd4EwOOdrCeAr45Yj/XzsdwOsVIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAIgOIDqA6ACIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAKLjFgCiA4gOgOgAogMgOoDoAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAH+zqFvwfvfc9ura1Fj5uSmlyvdjpAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAogMgOsAYRlt8uZxzeMRErXVyvdjpAKIDIDqA6ACIDiA6gOgAiA4gOgCiA4gOIDoAogOIDkCc0RYHcL/fw2tLKeG1y7KEx0Ss6+qHw04HEB1AdABEBxAdANEBRAdAdADRAUQHQHQA0QEQHUB0gNMz2oKPU2ud3AU7HQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAdQHQARAf4BkZbHEBrLbx227Yh51xKCa9dlmWPrk0pGYthpwMgOoDoAKIDIDqA6ACIDiA6gOi4BYDoAKIDIDqA6ACIDvAxjLbgr2qt4TERpZR9xDnnnPcR14udDiA6AKIDiA4gOgCiA4gOgOgAogOIDoDoAKIDIDqA6AD8yXWe5/Dn/O+MEXg8HuGTXpYlfNyU0pDxBaPu8yhnu97ee/icW2vh467rOuR63xkDYqcDeL0CRAdAdADRARAdQHQA0QEQHUB0AEQHEB0A0QFEBziTadSBX69XeBTA8/kMH3fbtvDadz7n57uNGm1xxOfZTgcQHUB0AEQHEB0A0QFEBxAdANEBRAdAdADRARAdQHSAM7mOOvDtdgt/Vp9z3v10fJJ5nj3PdjqA6ACi4xYAogOIDoDoAKIDIDqA6ACiAyA6gOgAiA4gOgC/+QkMcZdopY6KFwAAAABJRU5ErkJggg==" alt="Choose K">
+    <h1>We tailor the <span class="hl">cryptography</span> to the <span class="hl">software</span> and your use&#160;cases.</h1>
+    <p class="lede">Harnessing <b>multi-party computation (MPC)</b>, <b>homomorphic encryption (HE)</b>, <b>trusted execution environments (TEE)</b>, or <b>post-quantum (PQ) primitives</b> for production-ready workflows takes more than the right libraries. We build the protocols, tooling, and systems to meet your needs.</p>
+    <div class="modes">
+      <span class="chip">MPC</span>
+      <span class="chip">HE</span>
+      <span class="chip">TEEs</span>
+      <span class="chip pq">PQ</span>
     </div>
-    <div class="splash noselect">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAAEOCAYAAAC0KMNOAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpVIqDhYUEczQOtlFRRylikWwUNoKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdXFSdJES/5cUWsR4cNyPd/ced+8AoVllqtkzB6iaZaQTcTGXXxUDrwhiCAKiGJOYqSczi1l4jq97+Ph6F+NZ3uf+HP1KwWSATySeY7phEW8Qz2xaOud94jArSwrxOfGEQRckfuS67PIb55LDAs8MG9n0PHGYWCx1sdzFrGyoxNPEEUXVKF/Iuaxw3uKsVuusfU/+wlBBW8lwneYoElhCEimIkFFHBVVYiNGqkWIiTftxD/+I40+RSyZXBYwcC6hBheT4wf/gd7dmcWrSTQrFgd4X2/6IAoFdoNWw7e9j226dAP5n4Err+GtNYPaT9EZHixwBA9vAxXVHk/eAyx1g+EmXDMmR/DSFYhF4P6NvygODt0Bwze2tvY/TByBLXS3fAAeHwHiJstc93t3X3du/Z9r9/QC8rHLEluMd/wAAAAlwSFlzAAALEwAACxMBAJqcGAAAA89JREFUeNrt3M0J2zAYgOG4zgRZI6CdPILA12wg0AieShvknA2Ee+ixLZQvUMXx89yFf+K8yAd/02WQ3vseXdtaCx83pTRdwPM8zA+PCyA6gOgAiA4gOgCiA4gOIDoAogOIDoDoAKIDIDqA6AAncj3bBeecwyMIaq3GYuB5ttMBvF4BiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiA/DPpt57+NP41lr4wNu2Dblg4yn4NO+MpyilXEb8f1NK4f+RnQ7g9QoQHQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAd4EwOOdrCeAr45Yj/XzsdwOsVIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAiA4gOoDoAIgOIDoAogOIDoDoAKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiAyA6gOgAogMgOoDoAIgOIDoAogOIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAIgOIDqA6ACIDiA6AKIDiA6A6ACiA4gOgOgAogMgOoDoAKLjFgCiA4gOgOgAogMgOoDoAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAH+zqFvwfvfc9ura1Fj5uSmlyvdjpAKIDIDqA6ACIDiA6AKIDiA4gOgCiA4gOgOgAogMgOsAYRlt8uZxzeMRErXVyvdjpAKIDIDqA6ACIDiA6gOgAiA4gOgCiA4gOIDoAogOIDkCc0RYHcL/fw2tLKeG1y7KEx0Ss6+qHw04HEB1AdABEBxAdANEBRAdAdADRAUQHQHQA0QEQHUB0gNMz2oKPU2ud3AU7HQDRAUQHQHQA0QFEB0B0ANEBEB1AdABEBxAdQHQARAf4BkZbHEBrLbx227Yh51xKCa9dlmWPrk0pGYthpwMgOoDoAKIDIDqA6ACIDiA6gOi4BYDoAKIDIDqA6ACIDvAxjLbgr2qt4TERpZR9xDnnnPcR14udDiA6AKIDiA4gOgCiA4gOgOgAogOIDoDoAKIDIDqA6AD8yXWe5/Dn/O+MEXg8HuGTXpYlfNyU0pDxBaPu8yhnu97ee/icW2vh467rOuR63xkDYqcDeL0CRAdAdADRARAdQHQA0QEQHUB0AEQHEB0A0QFEBziTadSBX69XeBTA8/kMH3fbtvDadz7n57uNGm1xxOfZTgcQHUB0AEQHEB0A0QFEBxAdANEBRAdAdADRARAdQHSAM7mOOvDtdgt/Vp9z3v10fJJ5nj3PdjqA6ACi4xYAogOIDoDoAKIDIDqA6ACiAyA6gOgAiA4gOgC/+QkMcZdopY6KFwAAAABJRU5ErkJggg==" alt="Choose K"></img>
-    </div>
-    <div class="content-shadow">
-      <div class="content">
-        <div class="container main">
-          <div class="card-deck xl-2">
-            <div class="card xl-4">
-              <div class="card-body">
-                Harnessing <b>multi-party computation (MPC)</b>, <b>homomorphic encryption (HE)</b>, and <b>trusted execution environments (TEE)</b> to build production-ready private and secure workflows takes more than the right libraries and infrastructures. At <b>Choose K</b>, we tailor the cryptography and the software to your use case.
-              </div>
-            </div>
-          </div>
+  </section>
+
+  <section class="focus">
+    <div class="flabel"><span class="idx">&gt;</span>Private Static Analysis &amp; Simulation<span class="ln"></span></div>
+    <div class="paper">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i></i><i class="on"></i><i></i></span>
+        <span class="win-title">Kinetics — Tools for the Move Ecosystem</span>
+        <span class="win-meta"><span class="live"></span>libraries &amp; platform</span>
+      </div>
+      <div class="cbody">
+        <div class="c-text">
+          <h3>Static analysis for Move</h3>
+          <p style="margin-bottom:26px;"><b>Kinetics</b> maps any Sui transaction into its dataflow graph — dependencies, taint, and stranded resources — entirely in the browser. Private and encrypted simulation is next.</p>
+          <a class="btn green" href="https://kinetics.network">Explore Kinetics <span class="ar">&rsaquo;&rsaquo;</span></a>
         </div>
-        <div class="container tiles">
-          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  <div>
-                    <div>
-                      Protect transaction data and prevent front-running by maintaining and operating <b>encrypted order books</b>.
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <a href="https://choosek.com/tinybook">Learn more &NestedGreaterGreater;</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="c-viz">
+          <div class="dag-wrap dag">
+            <div class="dag-cap">
+              <span class="t">Dataflow · split &amp; transfer</span>
+              <span class="t2"><em>green = critical path</em></span>
             </div>
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  <div>
-                    <div>
-                      Encrypt users' contributions in decentralized auctions and other <b>decision-making workflows</b>.
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <a href="https://choosek.com/tinyvote">Learn more &NestedGreaterGreater;</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  Generate fully accurate <b>transaction cost analysis (TCA)</b> reports without decrypting customer data
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  Compare encrypted customer data across financial institutions in <b>know your customer (KYC)</b> workflows.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 card-deck">
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  Address challenges associated with <b>maximal extractable value (MEV)</b> by working with encrypted transactions.
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card xl-4 card-shadow">
-                <div class="card-body card-window">
-                  Introduce <b>encrypted data</b> into business workflows, enabling new opportunities for collaboration.
-                </div>
-              </div>
-            </div>
+            <!-- Authentic layered PTB DAG: split a coin off gas, transfer it. -->
+            <svg viewBox="0 0 452 208" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dataflow graph of a split-and-transfer transaction">
+              <defs>
+                <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#b4b4aa"/></marker>
+                <marker id="arc" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#5f9e79"/></marker>
+              </defs>
+              <path class="gedge crit" d="M130 42 C156 42, 156 90, 180 90" marker-end="url(#arc)"/>
+              <path class="gedge"      d="M130 102 C156 102, 156 90, 180 90" marker-end="url(#ar)"/>
+              <path class="gedge crit" d="M300 90 C312 90, 312 136, 322 136" marker-end="url(#arc)"/>
+              <path class="gedge"      d="M130 162 C244 162, 244 136, 322 136" marker-end="url(#ar)"/>
+              <text class="glbl" x="150" y="64">coin</text>
+              <text class="glbl" x="150" y="122">amount</text>
+              <text class="glbl" x="300" y="112">objects</text>
+              <text class="glbl" x="240" y="152">address</text>
+              <g><rect class="gnode gas" x="10" y="26" width="120" height="32"/><text class="gt" x="17" y="40">GasCoin</text><text class="gsub" x="17" y="51">coin</text></g>
+              <g><rect class="gnode in"  x="10" y="86" width="120" height="32"/><text class="gt" x="17" y="100">Input[0]</text><text class="gsub" x="17" y="111">u64 · amount</text></g>
+              <g><rect class="gnode in"  x="10" y="146" width="120" height="32"/><text class="gt" x="17" y="160">Input[1]</text><text class="gsub" x="17" y="171">address</text></g>
+              <g><rect class="gnode crit" x="180" y="74" width="120" height="32"/><text class="gt" x="187" y="88">SplitCoins</text><text class="gsub" x="187" y="99">cmd 0 · Result</text></g>
+              <g><rect class="gnode crit" x="322" y="120" width="120" height="32"/><text class="gt" x="329" y="134">TransferObjects</text><text class="gsub" x="329" y="145">cmd 1 · sink</text></g>
+            </svg>
           </div>
         </div>
       </div>
     </div>
-    <div class="content-noshadow">
-      <div class="content content-free">
-        <div class="container secondary">
-          <div class="card-deck xl-2">
-            <div class="card xl-4">
-              <div class="card-body">
-                <div id="signup">
-                  <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-                  <div id="mc_embed_signup">
-                    <style>
-#signup h2 { color:var(--text-on-dark); }
-#signup { background:var(--transparent); clear:left; }
-#signup .mc-field-group { height:150px !important; margin-bottom:0px !important; }
-#signup #mce-responses {
-  position:relative !important;
-  top:-145px !important;
-  grid-template-columns:100% !important;
-  width:100% !important;
-  margin:0px !important;
-  padding:3px !important;
-}
-#signup .response {
-  width:100% !important;
-  margin:0px !important; padding-top:0px !important;
-}
-#signup .helper_text {
-  background-color:var(--transparent) !important;
-}
-#signup .mce_inline_error {
-  margin:0px !important;
-  padding-top:-10px !important;
-  background-color:var(--transparent) !important;
-  color:var(--text-on-dark) !important;
-  font-size:24px !important;
-}
-#signup #mce-error-response {
-  width:100% !important;
-  background-color:var(--background-dark) !important;
-  color:var(--text-on-dark) !important;
-  font-size:24px !important;
-  font-weight:400 !important;
-}
-#signup #mce-success-response {
-  width:100% !important;
-  background-color:var(--background-dark) !important;
-  color:var(--text-on-dark) !important;
-  font-size:24px !important;
-  font-weight:400 !important;
-}
-#signup #mce-EMAIL {
-  height:57px !important;
-  width:calc(100% - 170px);
-  border:1px solid var(--surface-light) !important;
-  border-radius:0px !important;
-  background-color:var(--background-dark);
-  color:var(--text-on-dark) !important;
-  font-size:24px !important;
-}
-#signup #mce-EMAIL:focus {
-  outline:none !important;
-  border:1px solid var(--surface-light) !important;
-}
-#signup #mce-EMAIL-HELPERTEXT {
-  background-color:var(--transparent) !important;
-}
-#signup #mc-embedded-subscribe {
-  position:relative;
-  top:-150px;
-  height:57px !important;
-  width:160px !important;
-  margin-right:42px;
-  padding:10px !important;
-  border-radius:0px !important;
-  border:1px solid var(--surface-light);
-  background-color:var(--background-dark) !important;
-  color:var(--text-on-dark) !important;
-  font-size:24px !important;
-}
-#signup #mc-embedded-subscribe:hover {
-  background-color:var(--button-on-dark-highlighted) !important;
-  color:var(--text-on-light) !important;
-}
-#signup input.mce_inline_error {
-  border:1px solid var(--surface-light) !important;
-}
-.optionalParent { text-align:right; }
-@media all and (max-width:1200px) {
-  #signup #mce-EMAIL {
-    width:calc(100% - 176px);
-    padding-left:4px !important;
-  }
-}
-@media all and (max-width:991px) {
-  #signup #mce-EMAIL {
-    width:calc(100% - 194px);
-    padding-left:6px !important;
-  }
-}
-@media all and (max-width:767px) {
-  #signup #mce-EMAIL {
-    width:calc(100% - 190px);
-    padding-left:8px !important;
-  }
-}
-@media all and (max-width:550px) {
-  #signup #mce-EMAIL {
-    width:100%;
-    margin-bottom:82px !important;
-    font-size:20px !important;
-  }
-  #signup #mce-responses { margin-top:74px !important; }
-  #signup #mc-embedded-subscribe {
-    position:relative;
-    top:-86px;
-    width:100% !important;
-    margin-right:52px;
-  }
-  .optionalParent { padding-right:4%; }
-}
-                    </style>
-                    <form action="https://choosek.us21.list-manage.com/subscribe/post?u=6857be21cdbcb21e1805fcacd&amp;id=fbb288fc4f&amp;f_id=002befe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                      <div id="mc_embed_signup_scroll">
-                        <h2>Subscribe for the latest news.</h2>
-                        <div class="mc-field-group">
-                          <input type="email" name="EMAIL" class="required email rounded-0" id="mce-EMAIL" required="" value="" placeholder="Email address">
-                          <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                        </div>
-                        <div class="optionalParent">
-                          <input type="submit" class="button"
-                                 name="subscribe" id="mc-embedded-subscribe" 
-                                 value="Subscribe"
-                                 onclick="document.getElementById('mc-embedded-subscribe').readOnly = true;">
-                        </div>
-                        <div id="mce-responses" class="clear foot" >
-                          <div class="response" id="mce-error-response" style="display:none;"></div>
-                          <div class="response" id="mce-success-response" style="display:none;"></div>
-                        </div>
-                        <div aria-hidden="true" style="position:absolute; left:-5000px;">
-                          <input type="text" name="b_6857be21cdbcb21e1805fcacd_fbb288fc4f" tabindex="-1" value="">
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+  </section>
+
+  <section class="focus">
+    <div class="flabel"><span class="idx">&gt;</span>Towards Post-quantum &amp; Post-AI Cryptography<span class="ln"></span></div>
+    <div class="paper">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i class="on"></i><i></i><i class="y"></i></span>
+        <span class="win-title">Cryptographic Assessment &amp; Exploration</span>
+        <span class="win-meta"><span class="live"></span>services &amp; network</span>
+      </div>
+      <div class="duo2">
+        <!-- 2a: transition assessment -->
+        <div class="sub">
+          <span class="slabel">Transition assessment</span>
+          <div class="screen hs">
+            <div class="r"><span class="lab">control</span><span class="grp">x25519</span><span class="mark"><span class="dot"></span>classical</span></div>
+            <div class="r pq"><span class="lab">hybrid</span><span class="grp">x25519mlkem768</span><span class="mark"><span class="dot"></span>PQ&#160;READY</span></div>
+          </div>
+          <p style="margin-bottom:14px;">See which services already negotiate <b>post-quantum</b> key exchange before "harvest now, decrypt later" becomes "decrypt now".</p>
+          <a class="btn green" href="https://choosek.is/quantum">Assess a domain <span class="ar">&rsaquo;&rsaquo;</span></a>
+        </div>
+        <!-- 2b: parameter search network -->
+        <div class="sub">
+          <span class="slabel">Parameter search network</span>
+          <div class="screen net-screen">
+            <div class="screen-cap"><span class="t">&gt;_ search nodes</span><span class="r" id="netStat">best score …</span></div>
+            <svg id="netSvg" viewBox="0 0 420 210" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="Decentralized search nodes converging on a verifying contract"></svg>
+          </div>
+          <p style="margin-bottom:14px;">Participate by contributing to a decentralized search for better curve and lattice parameters.</p>
+          <a class="btn green" href="https://choosek.network">Participate in the network <span class="ar">&rsaquo;&rsaquo;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="focus">
+    <div class="flabel"><span class="idx">&gt;</span>Secure &amp; Encrypted Workflows in Finance<span class="ln"></span></div>
+    <div class="paper">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+        <span class="win-title">confidential matching &amp; order books</span>
+        <span class="win-meta"><span class="live"></span>software &amp; infrastructure</span>
+      </div>
+      <div class="cbody rev">
+        <div class="c-text">
+          <h3>Markets that clear under encryption</h3>
+          <p style="margin-bottom:20px;">Match orders under <b>MPC</b> or inside a <b>TEE</b>; aggregate data using <b>HE</b>. The resting book never appears in the clear — only the clearing price is revealed, so there's nothing left to front-run.</p>
+          <div class="minitags">
+            <span><b>MPC</b> for matching</span>
+            <span><b>HE</b> for aggregation</span>
+            <span><b>TEEs</b> for complex workflows and legacy tools</span>
+          </div>
+        </div>
+        <div class="c-viz">
+          <div class="screen book-screen">
+            <div class="screen-cap"><span class="t">&gt;_ order book · ETH / USDC</span><span class="r"><span id="bookState">sealed</span></span></div>
+            <div class="book" id="book">
+              <div class="book-head"><span>Price</span><span>Size</span><span>Total</span></div>
+              <div id="asks"></div>
+              <div class="mid">
+                <div><div class="lab">Clearing price</div><div class="clr" id="clearPx">2,041.<span id="clearPxDec">62</span><span class="u">USDC</span></div></div>
+                <div class="st">MATCHED<br><span id="clearQty">18.4 Ξ</span></div>
               </div>
+              <div id="bids"></div>
+              <canvas class="px-layer" id="pxLayer"></canvas>
             </div>
+            <div class="book-foot"><span>book: <em>encrypted</em></span><span>reveal: clearing price only</span></div>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-window">
-        <div class="container noselect">
-          <div class="card-deck mb-3">
-            <div class="card mb-4">
-              <div class="card-body card-body-items">
-                <div class="card-body-items-left">
-                  <span class="item">&#169; 2026 Choose K Corp.</span>
-                </div>
-                <div class="card-body-items-right">
-                  <span class="icon"><a href="mailto:contact@choosek.com"><i class="far fa-envelope"></i></a></span>
-                  <span class="icon"><a href="https://twitter.com/choosekcorp"><i class="fab fa-x-twitter"></i></a></span>
-                  <span class="icon"><a href="https://linkedin.com/company/choosek"><i class="fab fa-linkedin"></i></a></span>
-                  <span class="icon"><a href="https://github.com/choosek"><i class="fab fa-github"></i></a></span>
-                </div>
+  </section>
+
+  <section class="subscribe">
+    <div class="sub-card paper corner">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i class="on"></i><i class="on"></i><i class="y"></i></span>
+        <span class="win-title">stay in the loop</span>
+        <span class="win-meta"></span>
+      </div>
+      <div class="win-body">
+        <h3>Subscribe for the <b>latest news</b>.</h3>
+        <p class="small">Get the latest updates and news on releases from the Choose K team.</p>
+        <div id="signup">
+          <form action="https://choosek.us21.list-manage.com/subscribe/post?u=6857be21cdbcb21e1805fcacd&amp;id=fbb288fc4f&amp;f_id=002befe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="Email address" aria-label="Email address">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe">
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display:none;"></div>
+                <div class="response" id="mce-success-response" style="display:none;"></div>
+              </div>
+              <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                <input type="text" name="b_6857be21cdbcb21e1805fcacd_fbb288fc4f" tabindex="-1" value="">
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-    </footer>
-    <div class="bottom-spacer"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
-    </script>
-    <script>
-    function backgroundPixels() {
-      const canvas = document.getElementById("background-pixels");
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      const canvasHeight = canvas.getBoundingClientRect().height;
-      const canvasWidth = canvas.getBoundingClientRect().width;
-      const context = canvas.getContext("2d");
-      const pixelSize = Math.floor(Math.sqrt((canvasHeight * canvasWidth) / 1200));
-      const colorRange = 23;
-      const xCenter = Math.floor(canvasWidth / 2);
-      for (let y = 0; y < canvasHeight; y += pixelSize) {
-        for (let x = 0; x < canvasWidth * 2; x += pixelSize) {
-          const yPixel = Math.floor(y / pixelSize);
-          const xPixel = Math.floor(x / pixelSize);
-          const even = xPixel % 2 == 0;
-          const x_ = (((even ? -1 : 1) * x) / 2) + xCenter - (even ? 0 : (pixelSize / 2));
-          let r = Math.pow((2 * xPixel) + (25 * yPixel * yPixel), 17) % colorRange;
-          if (r == 0) {
-            r = Math.pow((yPixel + 1) * xPixel * xPixel * 17, 4) % colorRange;
-          }
-          r += 5 + Math.round(Math.random() * 6);
-          context.fillStyle = "rgb(" + [r, r, r].join(",") + ")";
-          context.fillRect(x_, y, pixelSize, pixelSize);
-        }
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="paper foot-card">
+    <span class="foot-l">&#169; 2026 Choose K Corp.</span>
+    <div class="foot-r">
+      <a href="mailto:contact@choosek.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14"/><path d="M3 6.5 L12 13 L21 6.5"/></svg>
+      </a>
+      <a href="https://twitter.com/choosekcorp" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2.5h3.3l-7.2 8.2 8.5 11.3h-6.7l-5.2-6.9-6 6.9H1.6l7.7-8.8L1.1 2.5h6.9l4.7 6.3 6.2-6.3Zm-1.2 17.8h1.8L6.9 4.4H4.9l12.8 15.9Z"/></svg>
+      </a>
+      <a href="https://linkedin.com/company/choosek" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5A1.94 1.94 0 1 1 3.06 5a1.94 1.94 0 0 1 3.88 0ZM3.4 8.4h3.1V21H3.4V8.4Zm5.06 0h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.15 1.46-2.15 2.96V21h-3.1V8.4Z"/></svg>
+      </a>
+      <a href="https://github.com/choosek" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 2.5-.34c.85 0 1.71.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+<div class="spacer"></div>
+
+<script>
+(function(){
+  var form = document.getElementById('mc-embedded-subscribe-form');
+  if(!form) return;
+  var okBox  = document.getElementById('mce-success-response');
+  var errBox = document.getElementById('mce-error-response');
+  var btn    = document.getElementById('mc-embedded-subscribe');
+  var email  = document.getElementById('mce-EMAIL');
+
+  function show(el, html){ if(el){ el.innerHTML = html; el.style.display = 'block'; } }
+  function hide(el){ if(el){ el.style.display = 'none'; el.innerHTML = ''; } }
+  function busy(on){ if(btn){ btn.readOnly = on; btn.value = on ? 'Subscribing…' : 'Subscribe'; } }
+
+  form.setAttribute('novalidate', 'novalidate'); // we handle feedback inline
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    hide(okBox); hide(errBox);
+
+    var val = (email && email.value || '').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+      show(errBox, 'Please enter a valid email address.');
+      if(email){ email.focus(); }
+      return;
+    }
+
+    // Mailchimp exposes a JSONP endpoint at /subscribe/post-json?...&c=CALLBACK
+    var action = form.getAttribute('action') || '';
+    var url = action.replace('/post?', '/post-json?');
+    var cb = 'ck_mc_' + Date.now();
+    var parts = [];
+    Array.prototype.forEach.call(form.querySelectorAll('input[name]'), function(i){
+      if(i.type === 'submit'){ return; }
+      parts.push(encodeURIComponent(i.name) + '=' + encodeURIComponent(i.value || ''));
+    });
+    url += (url.indexOf('?') > -1 ? '&' : '?') + parts.join('&') + '&c=' + cb;
+
+    var s = document.createElement('script');
+    var done = false;
+    function cleanup(){
+      done = true;
+      try { delete window[cb]; } catch(_) { window[cb] = undefined; }
+      if(s.parentNode){ s.parentNode.removeChild(s); }
+    }
+    window[cb] = function(data){
+      if(done){ return; }
+      cleanup(); busy(false);
+      if(data && data.result === 'success'){
+        show(okBox, data.msg || 'Thank you for subscribing!');
+        if(email){ email.value = ''; }
+      } else {
+        var m = (data && data.msg) ? String(data.msg).replace(/^\d+\s*-\s*/, '') : 'Sorry, something went wrong. Please try again.';
+        show(errBox, m);
       }
     };
-    window.onresize = backgroundPixels;
-    window.onload = backgroundPixels;
-    </script>
-  </body>
+    s.onerror = function(){ if(done){ return; } cleanup(); busy(false); show(errBox, 'Network error — please try again.'); };
+    busy(true);
+    document.body.appendChild(s);
+    s.src = url;
+    setTimeout(function(){ if(!done){ cleanup(); busy(false); show(errBox, 'The request timed out. Please try again.'); } }, 12000);
+  });
+})();
+</script>
+
+<!-- ============================== VISUALS ============================== -->
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function paintStatic(){
+    var canvas = document.getElementById('bgStatic');
+    if(!canvas) return;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    var h = canvas.getBoundingClientRect().height;
+    var w = canvas.getBoundingClientRect().width;
+    var ctx = canvas.getContext('2d');
+    var pixelSize = Math.max(2, Math.floor(Math.sqrt((h*w)/1200)));
+    var colorRange = 23;
+    var xCenter = Math.floor(w/2);
+    for(var y=0; y<h; y+=pixelSize){
+      for(var x=0; x<w*2; x+=pixelSize){
+        var yP = Math.floor(y/pixelSize);
+        var xP = Math.floor(x/pixelSize);
+        var even = xP%2===0;
+        var x_ = (((even?-1:1)*x)/2) + xCenter - (even?0:pixelSize/2);
+        var r = Math.pow((2*xP)+(25*yP*yP),17) % colorRange;
+        if(r===0) r = Math.pow((yP+1)*xP*xP*17,4) % colorRange;
+        r += 5 + Math.round(Math.random()*6);
+        ctx.fillStyle = 'rgb('+r+','+r+','+r+')';
+        ctx.fillRect(x_, y, pixelSize, pixelSize);
+      }
+    }
+  }
+  var rT;
+  window.addEventListener('resize', function(){ clearTimeout(rT); rT=setTimeout(paintStatic,180); });
+  paintStatic();
+
+  /* small helper: run fn once the element scrolls into view */
+  function onView(el, fn){
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){ fn(); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ fn(); io.disconnect(); } });
+    }, { threshold:0.35 });
+    io.observe(el);
+  }
+
+  /* ---------- Parameter search network node viz ---------- */
+  function buildNet(){
+    var svg = document.getElementById('netSvg');
+    if(!svg) return;
+    var W=420, H=150, cx=W*0.5, cy=H*0.52, NS='http://www.w3.org/2000/svg';
+    var core = { x:cx, y:cy };
+    var nodes = [
+      {x:54,y:34},{x:120,y:104},{x:66,y:118},{x:196,y:26},
+      {x:360,y:40},{x:392,y:110},{x:300,y:126},{x:250,y:96},{x:340,y:80}
+    ];
+    // edges to core
+    var frag = document.createDocumentFragment();
+    nodes.forEach(function(n,idx){
+      var p=document.createElementNS(NS,'path');
+      p.setAttribute('class','nedge');
+      p.setAttribute('d','M'+n.x+' '+n.y+' L'+core.x+' '+core.y);
+      p.setAttribute('data-i', idx);
+      frag.appendChild(p);
+    });
+    // pips (traveling submissions) — one per edge, reused
+    var pips=[];
+    nodes.forEach(function(n){
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('class','pip'); c.setAttribute('r','2.2');
+      c.setAttribute('cx',n.x); c.setAttribute('cy',n.y);
+      c.setAttribute('opacity','0');
+      frag.appendChild(c); pips.push({el:c,from:n});
+    });
+    // nodes
+    var nodeEls=[];
+    nodes.forEach(function(n){
+      var g=document.createElementNS(NS,'g'); g.setAttribute('class','nnode');
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',n.x); c.setAttribute('cy',n.y); c.setAttribute('r','7');
+      g.appendChild(c); frag.appendChild(g); nodeEls.push(g);
+    });
+    // core (the verifying contract)
+    var cg=document.createElementNS(NS,'g'); cg.setAttribute('class','nnode core');
+    var cc=document.createElementNS(NS,'circle');
+    cc.setAttribute('cx',core.x); cc.setAttribute('cy',core.y); cc.setAttribute('r','13');
+    cg.appendChild(cc);
+    var ct=document.createElementNS(NS,'text');
+    ct.setAttribute('class','nlabel'); ct.setAttribute('x',core.x); ct.setAttribute('y',core.y+30);
+    ct.setAttribute('text-anchor','middle'); ct.textContent='verify';
+    cg.appendChild(ct); frag.appendChild(cg);
+    svg.appendChild(frag);
+
+    var stat = document.getElementById('netStat');
+    // BLS12-381 truth: 2^32 | r-1, wt(x)=6 -> score 32000-6 = 31994. Start below, climb toward it.
+    var best = 24000;
+    var deltaEl = stat;
+    function fmt(n){ return n.toLocaleString('en-US'); }
+    if(deltaEl) deltaEl.textContent = 'best score '+fmt(best);
+
+    if(reduce){ // static: light one winner, done
+      nodeEls[6].setAttribute('class','nnode win');
+      if(deltaEl) deltaEl.textContent='best score 31,994';
+      return;
+    }
+    var edges = svg.querySelectorAll('.nedge');
+    var t=0;
+    function tick(){
+      t++;
+      // fire a pip from a random node along its edge to the core
+      if(t%40===0){
+        var i = Math.floor(Math.random()*pips.length);
+        var pip = pips[i];
+        edges[i].classList.add('hot');
+        var start = performance.now();
+        (function(pip, edgeI){
+          function anim(now){
+            var k = Math.min(1,(now-start)/1400);
+            var x = pip.from.x + (core.x-pip.from.x)*k;
+            var y = pip.from.y + (core.y-pip.from.y)*k;
+            pip.el.setAttribute('cx',x); pip.el.setAttribute('cy',y);
+            pip.el.setAttribute('opacity', k<1 ? '0.95' : '0');
+            if(k>=1){
+              edges[edgeI].classList.remove('hot');
+              // accepted improvement: bump score, flash the node green briefly
+              if(Math.random()<0.55 && best<31994){
+                best = Math.min(31994, best + Math.floor(60+Math.random()*260));
+                if(deltaEl) deltaEl.textContent = 'best score '+fmt(best);
+                nodeEls[edgeI].setAttribute('class','nnode win');
+                setTimeout(function(){ nodeEls[edgeI].setAttribute('class','nnode'); }, 900);
+              }
+            } else { requestAnimationFrame(anim); }
+          }
+          requestAnimationFrame(anim);
+        })(pip, i);
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    var raf = requestAnimationFrame(tick);
+  }
+  onView(document.getElementById('netSvg'), buildNet);
+
+  /* ---------- Confidential finance: order book + pixel dissolve ---------- */
+  function buildBook(){
+    var asksEl = document.getElementById('asks');
+    var bidsEl = document.getElementById('bids');
+    if(!asksEl || !bidsEl) return;
+    var mid = 2041.62;
+    // levels: {px, sz}; deeper levels (further from mid) get "sealed" + pixelated
+    function mk(side, i){
+      var step = 0.11 + i*0.02;
+      var px = side==='ask' ? mid + step*(i+1)*1.6 + 0.4 : mid - step*(i+1)*1.6 - 0.35;
+      var sz = (2 + Math.random()*22) * (1 + i*0.15);
+      return { px:px, sz:sz };
+    }
+    var N=4;
+    var asks=[], bids=[];
+    for(var i=0;i<N;i++){ asks.push(mk('ask',i)); bids.push(mk('bid',i)); }
+    asks.reverse(); // display worst ask on top
+
+    function row(side, lv, depthPct, sealed){
+      var d=document.createElement('div');
+      d.className='lvl '+side+(sealed?' sealed':'');
+      var bar='<span class="depth" style="width:'+depthPct+'%"></span>';
+      d.innerHTML = bar +
+        '<span class="px">'+lv.px.toFixed(2)+'</span>'+
+        '<span class="sz">'+lv.sz.toFixed(2)+'</span>'+
+        '<span class="tot">'+(lv.sz* (0.9+Math.random()*0.4)).toFixed(1)+'</span>';
+      return d;
+    }
+    // asks: top rows are deepest -> sealed; nearest row (last) visible
+    function render(){
+      asksEl.innerHTML=''; bidsEl.innerHTML='';
+      var maxSz = 0;
+      asks.concat(bids).forEach(function(l){ if(l.sz>maxSz) maxSz=l.sz; });
+      asks.forEach(function(l, idx){
+        var nearRank = idx; // 0 = furthest from mid (top)
+        var sealed = nearRank < N-2; // seal all but the 2 nearest
+        asksEl.appendChild(row('ask', l, 24+ (l.sz/maxSz)*70, sealed));
+      });
+      bids.forEach(function(l, idx){
+        var sealed = idx >= 2; // nearest 2 visible
+        bidsEl.appendChild(row('bid', l, 24+ (l.sz/maxSz)*70, sealed));
+      });
+    }
+    render();
+
+    // gently tick the clearing price + sizes to feel live
+    var clearDec = document.getElementById('clearPxDec');
+    var clearQty = document.getElementById('clearQty');
+    var midBase = mid;
+    function tickData(){
+      if(reduce) return;
+      // small bounded drift around the base so the integer part stays valid
+      mid += (Math.random()-0.5)*0.05;
+      if(mid < midBase-0.28) mid = midBase-0.28;
+      if(mid > midBase+0.30) mid = midBase+0.30;
+      if(clearDec){ var dec = Math.round((mid-Math.floor(mid))*100); clearDec.textContent = (dec<10?'0':'')+dec; }
+      var q = (14 + Math.random()*10).toFixed(1);
+      if(clearQty) clearQty.textContent = q+' \u039E';
+      // jitter sizes
+      asks.forEach(function(l){ l.sz = Math.max(1, l.sz + (Math.random()-0.5)*1.4); });
+      bids.forEach(function(l){ l.sz = Math.max(1, l.sz + (Math.random()-0.5)*1.4); });
+      render();
+      paintPixels(); // keep sealed rows covered immediately after re-render
+    }
+
+    /* pixel dissolve overlay: paint grayscale static over the sealed rows,
+       with cells nearer the book edges more fully "shattered". */
+    var cv = document.getElementById('pxLayer');
+    var book = document.getElementById('book');
+    var ctx = cv.getContext('2d');
+    function sizeCanvas(){
+      var r = book.getBoundingClientRect();
+      cv.width = Math.max(1, Math.floor(r.width));
+      cv.height = Math.max(1, Math.floor(r.height));
+    }
+    var phase=0;
+    function paintPixels(){
+      if(!cv.width) sizeCanvas();
+      var w=cv.width, h=cv.height, ps=5;
+      ctx.clearRect(0,0,w,h);
+      // determine sealed bands: top region (deep asks) and bottom region (deep bids)
+      var sealedRows = book.querySelectorAll('.lvl.sealed');
+      var bookRect = book.getBoundingClientRect();
+      sealedRows.forEach(function(rw){
+        var rr = rw.getBoundingClientRect();
+        var y0 = rr.top - bookRect.top, y1 = rr.bottom - bookRect.top;
+        // dissolve strength grows toward the price column edge (left) and outward rows
+        for(var y=Math.max(0,y0); y<Math.min(h,y1); y+=ps){
+          for(var x=0; x<w; x+=ps){
+            // probability of a pixel being drawn: denser toward left (price hidden),
+            // sparser toward the far right, plus shimmer
+            var edge = 1 - (x/w);                       // 1 at left, 0 at right
+            var pr = 0.30 + edge*0.55;
+            var sh = reduce?0:(Math.sin((x*0.05)+(y*0.07)+phase)*0.12);
+            if(Math.random() < pr+sh){
+              var g = 6 + ((Math.random()*17)|0);
+              ctx.fillStyle='rgb('+g+','+g+','+g+')';
+              ctx.fillRect(x,y,ps,ps);
+            }
+          }
+        }
+        // a few "detached" brighter shards drifting right (ciphertext escaping)
+        var shards = reduce?3:6;
+        for(var s=0;s<shards;s++){
+          var sx = (Math.random()*w*0.6) + (w*0.35);
+          var sy = y0 + Math.random()*(y1-y0);
+          var gg = 30 + ((Math.random()*40)|0);
+          ctx.fillStyle='rgba('+gg+','+gg+','+gg+','+(0.5+Math.random()*0.4)+')';
+          ctx.fillRect(sx, sy, ps, ps);
+        }
+      });
+    }
+
+    var pxTimer=null;
+    function loop(){ phase += 0.6; paintPixels(); }
+    function start(){
+      sizeCanvas(); paintPixels();
+      if(!reduce){
+        pxTimer = setInterval(loop, 130);
+        setInterval(tickData, 1400);
+      }
+    }
+    var rs; window.addEventListener('resize', function(){ clearTimeout(rs); rs=setTimeout(function(){ sizeCanvas(); paintPixels(); },160); });
+    onView(book, start);
+  }
+  buildBook();
+})();
+</script>
+</body>
 </html>
