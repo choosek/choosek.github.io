@@ -338,6 +338,40 @@ img{ max-width:100%; display:block; }
 @media (max-width:520px){ .stats{ grid-template-columns:repeat(2,1fr); }
   .stat:nth-child(2){ border-right:0; } }
 
+/* ---------- Concentric: APS confidentiality analysis (light schematic) ---------- */
+.dag-wrap.aps{ background-image:none; background:var(--paper); }
+.aps .dag-cap{ flex-wrap:wrap; gap:2px 10px; }
+.aps .dag-cap .t2 em{ color:var(--red-ink); font-style:normal; }
+.aps-b{ padding:11px 12px 12px; overflow-x:auto; }
+.aps table{ width:100%; border-collapse:collapse; font-family:var(--mono); font-size:11px; }
+.aps thead th{ text-align:left; font-weight:600; font-size:8.5px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3); padding:0 8px 7px; border-bottom:1px solid var(--line-2); white-space:nowrap; }
+.aps thead th:last-child{ text-align:right; }
+.aps tbody td{ padding:8px; border-bottom:1px solid var(--line-3); color:var(--ink-2); vertical-align:middle; white-space:nowrap; }
+.aps tbody td:last-child{ text-align:right; }
+.aps tbody tr:last-child td{ border-bottom:0; }
+.aps .fnm{ color:var(--ink); }
+.aps .pol{ font-size:8.5px; font-weight:700; letter-spacing:.05em; padding:2px 7px; display:inline-block; border:1px solid; }
+.aps .pol.open{ color:var(--red-ink); border-color:rgba(150,86,70,.4); background:var(--red-soft); }
+.aps .pol.restricted{ color:var(--grn-ink); border-color:var(--grn-line); background:var(--grn-soft); }
+.aps .pol.locked{ color:var(--ink-3); border-color:var(--line-2); background:var(--paper-2); }
+.aps .seal.leaked{ color:var(--red-ink); font-weight:600; }
+.aps .seal.leaked::before{ content:'\25B6'; font-size:7px; margin-right:5px; vertical-align:1.5px; }
+.aps .seal.cleared{ color:var(--ink-4); }
+.aps-find{ display:flex; align-items:flex-start; gap:10px; margin-top:11px; padding:10px 11px;
+  border:1px solid rgba(150,86,70,.34); background:var(--red-soft); }
+.aps-find .sev{ font-family:var(--mono); font-size:9px; font-weight:700; letter-spacing:.07em;
+  color:var(--paper); background:var(--red-ink); padding:3px 7px; flex:0 0 auto; }
+.aps-find .fbody{ min-width:0; }
+.aps-find .fh{ font-family:var(--mono); font-size:11px; color:var(--ink); font-weight:600; line-height:1.42; }
+.aps-find .fh .id{ color:var(--red-ink); }
+.aps-find .fh .loc{ color:var(--ink-3); font-weight:400; margin-left:6px; }
+.aps-find .dt, .aps-find .fixline{ display:block; font-family:var(--mono); font-size:10px;
+  color:var(--ink-2); line-height:1.5; margin-top:4px; }
+.aps-find .fixline b{ color:var(--grn-ink); font-weight:700; margin-right:6px; }
+.aps code{ font-family:var(--mono); color:var(--ink); font-weight:600; }
+@media (max-width:520px){ .aps table{ font-size:10px; } .aps tbody td{ padding:7px 6px; } }
+
 /* ---------- Post-quantum & network: 2-up ---------- */
 .duo{ display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
 @media (max-width:880px){ .duo{ grid-template-columns:1fr; } }
@@ -537,7 +571,7 @@ footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
       <div class="cbody">
         <div class="c-text">
           <h3>Static analysis for Move</h3>
-          <p style="margin-bottom:26px;"><b>Kinetics</b> maps any Sui transaction into its dataflow graph — dependencies, taint, and stranded resources — entirely in the browser. Private and encrypted simulation is next.</p>
+          <p style="margin-bottom:26px;"><b>Kinetics</b> analyzes transactions within the Move ecosystem via their dataflow graphs (dependencies, taint, and stranded resources) entirely in a browser or local workflow. Confidentiality analysis is also available, and private simulation is coming soon.  </p>
           <a class="btn green" href="https://kinetics.network">Explore Kinetics <span class="ar">&rsaquo;&rsaquo;</span></a>
         </div>
         <div class="c-viz">
@@ -566,6 +600,46 @@ footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
               <g><rect class="gnode crit" x="180" y="74" width="120" height="32"/><text class="gt" x="187" y="88">SplitCoins</text><text class="gsub" x="187" y="99">cmd 0 · Result</text></g>
               <g><rect class="gnode crit" x="322" y="120" width="120" height="32"/><text class="gt" x="329" y="134">TransferObjects</text><text class="gsub" x="329" y="145">cmd 1 · sink</text></g>
             </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper" style="margin-top:28px;">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i></i><i class="on"></i><i></i></span>
+        <span class="win-title">Concentric — Confidentiality Analysis for Arc</span>
+        <span class="win-meta"><span class="live"></span>libraries &amp; platform</span>
+      </div>
+      <div class="cbody">
+        <div class="c-text">
+          <h3>Confidentiality analysis for Arc</h3>
+          <p style="margin-bottom:26px;"><b>Concentric</b> reads a Solidity contract and its Arc Privacy Sector access policy and reconstructs the confidentiality boundary its policies draw (<i>i.e.</i>, what state it exposes, and through which path) before you deploy. Verified spend authority and compliance are next.</p>
+          <a class="btn green" href="https://concentric.network">Explore Concentric <span class="ar">&rsaquo;&rsaquo;</span></a>
+        </div>
+        <div class="c-viz">
+          <div class="dag-wrap aps">
+            <div class="dag-cap">
+              <span class="t">Exposure surface · confidential flow</span>
+              <span class="t2"><em>1 high</em> · ConfidentialPayroll.sol</span>
+            </div>
+            <div class="aps-b">
+              <table>
+                <thead><tr><th>Function</th><th>Policy</th><th>Reachable by</th><th>Reveals</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="fnm">balanceOf(address)</span></td><td><span class="pol open">OPEN</span></td><td>Any caller</td><td><span class="seal leaked">balances &rarr; return</span></td></tr>
+                  <tr><td><span class="fnm">pay(address, uint256)</span></td><td><span class="pol restricted">RESTRICTED</span></td><td>Grant-holders</td><td><span class="seal cleared">&mdash;</span></td></tr>
+                  <tr><td><span class="fnm">transfer(address, uint256)</span></td><td><span class="pol restricted">RESTRICTED</span></td><td>Grant-holders</td><td><span class="seal cleared">&mdash;</span></td></tr>
+                </tbody>
+              </table>
+              <div class="aps-find">
+                <span class="sev">HIGH</span>
+                <div class="fbody">
+                  <div class="fh"><span class="id">APS-1</span> Confidential state returned by an Open function <span class="loc">Ln 25</span></div>
+                  <span class="dt">Any caller can read <code>balances[who]</code> — every employee's confidential salary.</span>
+                  <span class="fixline"><b>Fix</b> Make <code>balanceOf</code> Restricted, or gate it with <code>require(msg.sender == who)</code>.</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
