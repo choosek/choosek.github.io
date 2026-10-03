@@ -372,6 +372,12 @@ img{ max-width:100%; display:block; }
 .aps code{ font-family:var(--mono); color:var(--ink); font-weight:600; }
 @media (max-width:520px){ .aps table{ font-size:10px; } .aps tbody td{ padding:7px 6px; } }
 
+/* ---------- Sunspot: three-observer view (reuses the .aps table + finding) ---------- */
+.aps.sun thead th:last-child, .aps.sun tbody td:last-child{ text-align:left; }
+.aps.sun .seal.shown{ color:var(--ink); font-weight:600; }
+.aps.sun .seal.shown::before{ content:'\25CB'; font-size:7px; margin-right:5px; vertical-align:1.5px; color:var(--ink-4); }
+.aps.sun .seal.cleared::before{ content:'\25CF'; font-size:7px; margin-right:5px; vertical-align:1.5px; color:var(--ink-4); }
+
 /* ---------- Post-quantum & network: 2-up ---------- */
 .duo{ display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
 @media (max-width:880px){ .duo{ grid-template-columns:1fr; } }
@@ -564,7 +570,7 @@ footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
     <p class="fintro">Privacy-enhancing technologies (PETs) can benefit users, developers, and organizations in a variety of settings. We are exploring opportunities to incorporate PETs within developer tools and resources that serve cryptocurrency wallet and smart contract ecosystems.</p>
     <div class="paper">
       <div class="win-bar">
-        <span class="lights"><i class="on"></i><i></i><i class="on"></i><i></i></span>
+        <span class="lights"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
         <span class="win-title">Kinetics — Tools for the Move Ecosystem</span>
         <span class="win-meta"><span class="live"></span>libraries &amp; platform</span>
       </div>
@@ -606,7 +612,7 @@ footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
     </div>
     <div class="paper" style="margin-top:28px;">
       <div class="win-bar">
-        <span class="lights"><i class="on"></i><i></i><i class="on"></i><i></i></span>
+        <span class="lights"><i></i><i></i><i class="on"></i><i></i></span>
         <span class="win-title">Concentric — Confidentiality Analysis for Arc</span>
         <span class="win-meta"><span class="live"></span>libraries &amp; platform</span>
       </div>
@@ -637,6 +643,61 @@ footer{ max-width:var(--maxw); margin:26px auto 0; padding:0 26px; }
                   <div class="fh"><span class="id">APS-1</span> Confidential state returned by an Open function <span class="loc">Ln 25</span></div>
                   <span class="dt">Any caller can read <code>balances[who]</code> — every employee's confidential salary.</span>
                   <span class="fixline"><b>Fix</b> Make <code>balanceOf</code> Restricted, or gate it with <code>require(msg.sender == who)</code>.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper" style="margin-top:28px;">
+      <div class="win-bar">
+        <span class="lights"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+        <span class="win-title">Sunspot — Confidentiality Analysis for Solana</span>
+        <span class="win-meta"><span class="live"></span>libraries &amp; platform</span>
+      </div>
+      <div class="cbody">
+        <div class="c-text">
+          <h3>Confidentiality analysis for Solana</h3>
+          <p style="margin-bottom:26px;"><b>Sunspot</b> reads a Solana Token-2022 confidential transfer and reconstructs what an observer can still learn (<i>e.g.</i>, an amount left in a log, a decrypted value written back, a missing or reused proof) before it reaches mainnet. Live simulation is next.</p>
+          <a class="btn green" href="https://sunspot.network">Explore Sunspot <span class="ar">&rsaquo;&rsaquo;</span></a>
+        </div>
+        <div class="c-viz">
+          <div class="dag-wrap aps sun">
+            <div class="dag-cap">
+              <span class="t">Three-observer view · one transfer</span>
+              <span class="t2"><em>1 high</em> · transfer_checked</span>
+            </div>
+            <div class="aps-b">
+              <table>
+                <thead><tr><th>Confidential value</th><th>Public chain</th><th>Auditor</th><th>Audience</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><span class="fnm">transfer amount</span></td>
+                    <td><span class="seal cleared">sealed</span></td>
+                    <td><span class="seal shown">42.00</span></td>
+                    <td><span class="seal cleared">sealed</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="fnm">available balance</span></td>
+                    <td><span class="seal cleared">sealed</span></td>
+                    <td><span class="seal cleared">sealed</span></td>
+                    <td><span class="seal cleared">sealed</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="fnm">msg! log</span></td>
+                    <td><span class="seal leaked">42.00</span></td>
+                    <td><span class="seal shown">42.00</span></td>
+                    <td><span class="seal leaked">42.00</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="aps-find">
+                <span class="sev">HIGH</span>
+                <div class="fbody">
+                  <div class="fh"><span class="id">CT-1</span> Confidential amount printed in a program log <span class="loc">ix 4</span></div>
+                  <span class="dt">The transfer keeps <code>amount</code> sealed on-chain, but <code>msg!("amt={}", amount)</code> prints it in the clear — anyone replaying the transaction learns it.</span>
+                  <span class="fixline"><b>Fix</b> Drop the amount from the log, or emit the ciphertext handle instead of the decrypted value.</span>
                 </div>
               </div>
             </div>
